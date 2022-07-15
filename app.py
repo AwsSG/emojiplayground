@@ -1,7 +1,9 @@
 import os
-from flask import Flask, render_template, request
+from flask import (Flask, render_template, url_for,
+                   request, flash, session, redirect)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -21,9 +23,39 @@ def main():
     """ the main view of the app """
     return render_template("index.html")
 
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """ Register route to register users """
+    if request.method == "POST":
+        # check if the username already exist
+        existing_user = mongo.db.test_entries.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists!")
+            return redirect(url_for("register"))
+
+        new_user = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.test_entries.insert_one(new_user)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+        return redirect(url_for("main", username=session["user"]))
+
+    return render_template("register.html")
+
+
 @app.route("/database_test",  methods=["GET", "POST"])
 def database_test():
     """ simple view used to send test values to mongodb """
+
+    all_entries = list(mongo.db.test_entries.find())
+
     if request.method == "POST":
         # get the value from the form to print
         value = request.form.get("test")
@@ -32,8 +64,7 @@ def database_test():
         }
         mongo.db.test_entries.insert_one(test_entry)
         print(value)
-
-    return render_template("database-test.html")
+    return render_template("database-test.html", all_entries=all_entries)
 
 
 if __name__ == "__main__":
