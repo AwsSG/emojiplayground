@@ -1,0 +1,43 @@
+/*colors for testing*/
+
+.orange {
+    background-color: orange
+}
+
+.red {
+    background-color: red
+}
+
+.blue {
+    background-color: blue
+}
+
+/*----------landing page-------------*/
+
+/*jumbatron*/
+
+.container-fluid {
+    padding: 0;
+}
+
+/*padding*/
+
+.three-across-box {
+    padding: 20px;
+}
+
+.black-border {
+    border: 1px black solid;
+}
+
+.three-across-padding {
+    padding: 20px;
+}
+
+.emoji-large {
+    font-size: 100px;
+}
+
+.emoji-medium {
+    font-size: 32px;
+}
