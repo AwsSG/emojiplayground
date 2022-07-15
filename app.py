@@ -67,6 +67,34 @@ def database_test():
     return render_template("database-test.html", all_entries=all_entries)
 
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    
+    if request.method == "POST":
+        # check if the user exists
+        existing_user = mongo.db.test_entries.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # ensure hashed password matches what the user provided
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("main", username=session["user"]))
+            else:
+                # invalid password match
+                flash("Incorrect username and/or password")
+                return redirect(url_for("login"))
+
+        else:
+            # username does not exist
+            flash("Incorrect username and/or password")
+            return redirect(url_for("login"))
+
+    return render_template("login.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

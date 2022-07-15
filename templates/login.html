@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Log In</h3>
+
+<form method="POST" action="{{ url_for('login') }}">
+    <!-- Username -->
+    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+        class="validate" required>
+    <label for="username">Username</label>
+
+    <!-- password -->
+    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+        class="validate" required>
+    <label for="password">Password</label>
+
+    <!-- Log in -->
+    <button type="submit">Log In</button>
+
+</form>
+
+{% endblock %}
