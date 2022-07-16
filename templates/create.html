@@ -3,30 +3,56 @@
 
 
 <div class="container">
-    <div class="row">
-        <form method="POST">
-        <p>Use the interface below to select your emojis</p>
-        <div>
-            <input name="emoji-1" data-number="1" readonly="readonly" class="emoji-input-1 emoji-selector-1" required/>
+    <div class="game-box mt-3 mb-3 mt-md-5 mb-md-5 p-2 p-lg-5 black-border">
+        <div class="container">
+            <div class="row p-4 justify-content-center">
+                <h2 class="create-title text-center">Build Emoji Riddles</h2>
+            </div>
+            <div class="row justify-content-center">
+                <p class="create-sub-title text-center">Select emojis to create your riddle</p>
+            </div>
+            <div class="row justify-content-center">
+                <p class="text-center">E.g. 🐝➡️🔙</p>
+            </div>
+            <form method="POST">
+            <div class="row justify-content-center">
+                <div class="emoji-select-box-container">
+                    <div class="emoji-select-box col-1">
+                        <input name="emoji-1" data-number="1" readonly="readonly" class="emoji-input-1 emoji-selector-1" required/>
+                    </div>
+                    <div class="emoji-select-box col-1">
+                        <input name="emoji-2" data-number="2" readonly="readonly" class="emoji-input-2 emoji-selector-2" />
+                    </div>
+                    <div class="emoji-select-box col-1">
+                        <input name="emoji-3" data-number="3" readonly="readonly"class="emoji-input-3 emoji-selector-3" />
+                    </div>
+                    <div class="emoji-select-box col-1">
+                        <input name="emoji-4" data-number="4" readonly="readonly" class="emoji-input-4 emoji-selector-4" />
+                    </div>
+                    <div class="emoji-select-box col-1">
+                        <input name="emoji-5" data-number="5" readonly="readonly" class="emoji-input-5 emoji-selector-5" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="text-center phrase-input">
+                    <label for="phrase-input">Enter your riddle answer phrase</label>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <p class="text-center">E.g. Be right back</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="phrase-input">
+                    <input name="phrase" id="phrase-input" required/>        
+            </div>
+            </div>
+            <div class="row justify-content-center pb-4">
+                <button class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Submit</button>
+            </div>
+            </form>
         </div>
-        <div>
-            <input name="emoji-2" data-number="2" readonly="readonly" class="emoji-input-2 emoji-selector-2" />
-        </div>
-        <div>
-            <input name="emoji-3" data-number="3" readonly="readonly"class="emoji-input-3 emoji-selector-3" />
-        </div>
-        <div>
-            <input name="emoji-4" data-number="4" readonly="readonly" class="emoji-input-4 emoji-selector-4" />
-        </div>
-        <div>
-            <input name="emoji-5" data-number="5" readonly="readonly" class="emoji-input-5 emoji-selector-5" />
-        </div>
-        <br><br>
-        <input name="phrase" id="phrase-input" required/>
-        <label for="phrase-input">Enter your Phrase</label>
-        <br>
-        <button type="submit">Submit</button>
-        </form>
+    </div>
 </div>
 
     
