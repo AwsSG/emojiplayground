@@ -17,19 +17,25 @@
     <!--Navbar Bootstrap Class-->
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Emoji Playground</a>
+            <a class="navbar-brand" href="{{ url_for('main') }}">Emoji Playground</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <ul class="navbar-nav">
+                      {% if session.user %}
                         <li class="nav-item">
-                            <button type="button" class="landing-page-button btn btn-outline-secondary">Log In 🔑</button>
+                            <a type="button" class="landing-page-button btn btn-outline-secondary" href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+                      {% else %}
+                        <li class="nav-item">
+                            <a type="button" class="landing-page-button btn btn-outline-secondary" href="{{ url_for('login') }}">Log In 🔑</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="landing-page-button btn btn-outline-secondary">Sign Up 📝</button>
+                            <a type="button" class="landing-page-button btn btn-outline-secondary" href="{{ url_for('register') }}">Sign Up 📝</a>
                         </li>
+                      {% endif %}
                     </ul>
             </div>
         </div>
