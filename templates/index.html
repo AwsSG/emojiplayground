@@ -110,7 +110,15 @@
                 <h4>Ready for the challenge? Sign up now and see how well you can emoji.</h4>
             </div>
             <div>
-                <a class="landing-page-button btn btn-outline-secondary orange-hover" href="#" role="button">Sign Up</a>
+                {% if session.user%}
+                <div class="col-12">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('create') }}" role="button">Start</a>
+                </div>
+                {% else %}
+                <div class="col-12">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Start</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
