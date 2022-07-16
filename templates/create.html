@@ -3,11 +3,18 @@
 
 
 <div class="container">
-    <div class="game-box mt-5 mb-5 p-2 p-lg-5 black-border">
+    <div class="game-box mt-3 mb-3 mt-md-5 mb-md-5 p-2 p-lg-5 black-border">
+        <div class="container">
+            <div class="row p-4 justify-content-center">
+                <h2 class="create-title text-center">Build Emoji Riddles</h2>
+            </div>
+            <div class="row justify-content-center">
+                <p class="create-sub-title text-center">Select emojis to create your riddle</p>
+            </div>
+            <div class="row justify-content-center">
+                <p class="text-center">E.g. 🐝➡️🔙</p>
+            </div>
             <form method="POST">
-                <div class="row">
-                    <p>Use the interface below to select your emojis</p>
-                </div> 
             <div class="row justify-content-center">
                 <div class="emoji-select-box-container">
                     <div class="emoji-select-box col-1">
@@ -27,14 +34,24 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <input name="phrase" id="phrase-input" required/>
-                <label for="phrase-input">Enter your Phrase</label>
+            <div class="row justify-content-center">
+                <div class="text-center phrase-input">
+                    <label for="phrase-input">Enter your riddle answer phrase</label>
+                </div>
             </div>
-            <div class="row">
-                <button type="submit">Submit</button>
+            <div class="row justify-content-center">
+                <p class="text-center">E.g. Be right back</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="phrase-input">
+                    <input name="phrase" id="phrase-input" required/>        
+            </div>
+            </div>
+            <div class="row justify-content-center pb-4">
+                <button class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Submit</button>
             </div>
             </form>
+        </div>
     </div>
 </div>
 
