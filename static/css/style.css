@@ -1,8 +1,5 @@
 /*colors for testing*/
 
-.orange {
-    background-color: orange
-}
 
 .red {
     background-color: red
@@ -10,6 +7,63 @@
 
 .blue {
     background-color: blue
+}
+
+
+/*----------fonts emoji sizes and colours -------------*/
+
+/*orange colour - option to change this to something custom*/
+.orange {
+    background-color: orange
+}
+
+/*emoji sizing*/
+
+.emoji-large {
+    font-size: 100px;
+}
+
+.emoji-medium {
+    font-size: 32px;
+}
+
+/*----------base template-------------*/
+
+/*Nav bar*/
+
+nav {
+    background-color: orange;
+}
+
+.navbar-brand {
+    font-size: x-large;
+}
+
+.nav-item button {
+    padding: 10px;
+    margin: 10px;
+    min-width: 120px;
+    border-radius: 2px;
+    box-shadow: 5px 5px;   
+}
+
+.btn-outline-secondary {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+
+/*Footer*/
+
+footer {
+    background-color: lightgrey;
+    min-height: 150px;
 }
 
 /*----------landing page-------------*/
@@ -20,9 +74,27 @@
     padding: 0;
 }
 
-/*padding*/
+.jumbotron {
+    height: 40vh;
+    background: url('../images/game-landing-page.jpg') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    padding-bottom: 0px;
+    padding-left: 0px;
+
+    position: relative;
+}
+
+/*three across*/
 
 .three-across-box {
+    padding: 20px;
+}
+
+.three-across-padding {
     padding: 20px;
 }
 
@@ -30,14 +102,5 @@
     border: 1px black solid;
 }
 
-.three-across-padding {
-    padding: 20px;
-}
 
-.emoji-large {
-    font-size: 100px;
-}
 
-.emoji-medium {
-    font-size: 32px;
-}
