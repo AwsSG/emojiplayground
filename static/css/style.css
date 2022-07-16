@@ -1,8 +1,5 @@
 /*colors for testing*/
 
-.orange {
-    background-color: orange
-}
 
 .red {
     background-color: red
@@ -12,27 +9,15 @@
     background-color: blue
 }
 
-/*----------landing page-------------*/
 
-/*jumbatron*/
+/*----------fonts emoji sizes and colours -------------*/
 
-.container-fluid {
-    padding: 0;
+/*orange colour - option to change this to something custom*/
+.orange {
+    background-color: orange
 }
 
-/*padding*/
-
-.three-across-box {
-    padding: 20px;
-}
-
-.black-border {
-    border: 1px black solid;
-}
-
-.three-across-padding {
-    padding: 20px;
-}
+/*emoji sizing*/
 
 .emoji-large {
     font-size: 100px;
@@ -41,3 +26,112 @@
 .emoji-medium {
     font-size: 32px;
 }
+
+/*----------grid padding and margins-------------*/
+
+.container-fluid {
+    padding: 0;
+}
+
+/*----------base template-------------*/
+
+/*Nav bar*/
+
+nav {
+    background-color: orange;
+}
+
+.navbar-brand {
+    font-size: x-large;
+}
+
+.landing-page-button {
+    padding: 10px;
+    margin: 10px;
+    min-width: 120px;
+    border-radius: 2px;
+    box-shadow: 5px 5px;   
+}
+
+.btn-outline-secondary {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+
+.orange-hover:hover {
+    color: #fff;
+    background-color: orange;
+    border-color: orange;
+}
+
+/*Footer*/
+
+footer {
+    background-color: lightgrey;
+    min-height: 150px;
+}
+
+/*----------landing page-------------*/
+
+/*jumbatron*/
+
+.jumbotron {
+    height: 40vh;
+    background: url('../images/game-landing-page.jpg') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    position: relative;
+}
+
+.jumbotron > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.jumbotron > .jumbotron-content {
+    position: relative;
+    z-index: 2;
+}
+
+.jumbotron-content div {
+    margin: 0;
+}
+
+/*three across*/
+
+.three-across-box {
+    padding: 20px;
+}
+
+.three-across-padding {
+    padding: 20px;
+}
+
+.black-border {
+    border: 1px black solid;
+}
+
+/*landing page full width section*/
+
+.landing-page-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+
