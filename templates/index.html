@@ -9,7 +9,7 @@
                     <h2 class="text-center">The collaborative Emoji riddle guessing game</h2>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="#" role="button">Sign Up</a>
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up</a>
                 </div>
             </div>
     </div>
@@ -63,9 +63,15 @@
             </div>
         </div>
         <div class="row justify-content-center">
+            {% if session.user%}
             <div class="col-12">
-                <a class="landing-page-button btn btn-outline-secondary" href="#" role="button">Sign Up</a>
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('create') }}" role="button">Start</a>
             </div>
+            {% else %}
+            <div class="col-12">
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('register') }}" role="button">Start</a>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

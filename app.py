@@ -23,8 +23,10 @@ def main():
     """ the main view of the app """
     return render_template("index.html")
 
+
 @app.route("/create", methods=["GET", "POST"])
 def create():
+    """ view to allow users to create riddles """
     if request.method == "POST":
         emoji_one = request.form.get("emoji-1") + " "
         emoji_two = request.form.get("emoji-2")
@@ -57,7 +59,6 @@ def create():
         print(emojis)
         print(phrase)
         mongo.db.riddles.insert_one(riddle)
-    """ view to allow users to create riddles """
     return render_template("create.html")
 
 
@@ -106,7 +107,7 @@ def database_test():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    
+    """ Login users view """
     if request.method == "POST":
         # check if the user exists
         existing_user = mongo.db.test_entries.find_one(
@@ -130,6 +131,15 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    """ log out current logged in user"""
+    # remove user from session cookie
+    flash("You have been logged out successfully!")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
