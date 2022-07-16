@@ -27,6 +27,12 @@
     font-size: 32px;
 }
 
+/*----------grid padding and margins-------------*/
+
+.container-fluid {
+    padding: 0;
+}
+
 /*----------base template-------------*/
 
 /*Nav bar*/
@@ -39,7 +45,7 @@ nav {
     font-size: x-large;
 }
 
-.nav-item button {
+.landing-page-button {
     padding: 10px;
     margin: 10px;
     min-width: 120px;
@@ -59,6 +65,12 @@ nav {
     border-color: grey;
 }
 
+.orange-hover:hover {
+    color: #fff;
+    background-color: orange;
+    border-color: orange;
+}
+
 /*Footer*/
 
 footer {
@@ -70,10 +82,6 @@ footer {
 
 /*jumbatron*/
 
-.container-fluid {
-    padding: 0;
-}
-
 .jumbotron {
     height: 40vh;
     background: url('../images/game-landing-page.jpg') no-repeat center;
@@ -82,10 +90,26 @@ footer {
     -o-background-size: cover;
     background-size: cover;
 
-    padding-bottom: 0px;
-    padding-left: 0px;
-
     position: relative;
+}
+
+.jumbotron > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.jumbotron > .jumbotron-content {
+    position: relative;
+    z-index: 2;
+}
+
+.jumbotron-content div {
+    margin: 0;
 }
 
 /*three across*/
@@ -102,5 +126,12 @@ footer {
     border: 1px black solid;
 }
 
+/*landing page full width section*/
+
+.landing-page-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
 
 
