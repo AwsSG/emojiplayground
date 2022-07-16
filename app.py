@@ -4,6 +4,7 @@ from flask import (Flask, render_template, url_for,
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import random
 if os.path.exists("env.py"):
     import env
 
@@ -21,7 +22,10 @@ mongo = PyMongo(app)
 @app.route("/")
 def main():
     """ the main view of the app """
-    return render_template("index.html")
+    riddles = list(mongo.db.riddles.find())
+    random_riddles = random.sample(riddles, 3)
+
+    return render_template("index.html", riddles=random_riddles)
 
 
 @app.route("/create", methods=["GET", "POST"])
