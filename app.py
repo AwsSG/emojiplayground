@@ -23,6 +23,43 @@ def main():
     """ the main view of the app """
     return render_template("index.html")
 
+@app.route("/create", methods=["GET", "POST"])
+def create():
+    if request.method == "POST":
+        emoji_one = request.form.get("emoji-1") + " "
+        emoji_two = request.form.get("emoji-2")
+        if emoji_two == None:
+            emoji_two = ""
+        else:
+            emoji_two = emoji_two + " "
+        emoji_three = request.form.get("emoji-3")
+        if emoji_three == None:
+            emoji_three = ""
+        else:
+            emoji_three = emoji_three + " "
+        emoji_four = request.form.get("emoji-4")
+        if emoji_four == None:
+            emoji_four = ""
+        else:
+            emoji_four = emoji_four + " "
+        emoji_five = request.form.get("emoji-5")
+        if emoji_five == None:
+            emoji_five = ""
+        else:
+            emoji_five = emoji_five + " "
+        emojis = emoji_one + emoji_two + emoji_three + emoji_four + emoji_five
+        phrase = request.form.get("phrase")
+        riddle = {
+            "emojis": emojis,
+            "phrase": phrase,
+            "user": session["user"]
+        }
+        print(emojis)
+        print(phrase)
+        mongo.db.riddles.insert_one(riddle)
+    """ view to allow users to create riddles """
+    return render_template("create.html")
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
