@@ -57,10 +57,10 @@ This app Emoji Playground is a fun and creative app where users can try to solve
       
           ![Leaderboard](static/images/leaderboard.png)
 
-- ### The Playground
-    -   The Playground section allows for playfulness when letting users be creative and start combining their own riddles using the provided emoji picker.  
+- ### Build Your Own Riddle
+    -   The Build Your Own Riddle section allows for playfulness when letting users be creative and start combining their own riddles using the provided emoji picker.  
 
-          ![Playground](static/images/build.png)
+          ![BuildRiddle](static/images/build.png)
 
 - ### Solve Others Riddles
     -   This area is where the user will be challenged by riddles that has been submitted by other users. 
@@ -112,25 +112,25 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
-    -   As a first time visitor I expect 
+    As a first time visitor I expect to quickly find clear and concise information about what the website is all about and how to use it.  
+    -   Upon entering the website, users are immediately greeted and guided with the necessary information that quickly allows the user to get started and a call to action to sign up to the service in order to participate.  
 
-    -   As a first time visitor I expect 
-
-    -   As a first time visitor I want to 
-
-
-
-
+    As a first time user I expect to be able to create my user account in order to both start creating and solving riddles.
+    - The user accounts buttons are located at the top in the nav bar to be able to be easly found by the users.  
+      
 -   #### Returning Visitor Goals
-    - As a returning user I expect to be able to 
+    As a returning user I expect to be able to create and submit more riddles to the service.
+    -   As a returning visitor the user will be able to login again to their account and continue to add riddles to their profile.
 
-    - As a returning visitor interested in 
-
-    
-
+    As a returning user I expect to be able to solve more riddles that others have submitted to the service.
+    -   After learning how the website works and trying to solve riddles, the users will quickly learn how the riddles works and be able to improve their skills.
+        
 -   #### Frequent User Goals
-    - As frequent user I expect to
+    As frequent user I expect that others have rated my riddles.
+    -   As a frequent user you will have submitted many riddles and the likelihood of someone rating them will have increased.
 
+    As frequent user I expect to create riddles that gets better ratings and that hopefully makes it to the leaderboard.
+    -   After submitting several riddles and receiving ratings, the user will be able to improve on their riddle creating skills by learning which ones that gets the best ratings.
 
 
 ### Further Testing
