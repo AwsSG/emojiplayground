@@ -26,6 +26,9 @@
                     <ul class="navbar-nav">
                       {% if session.user %}
                         <li class="nav-item">
+                            <a type="button" class="landing-page-button btn btn-outline-secondary" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                        </li>
+                        <li class="nav-item">
                             <a type="button" class="landing-page-button btn btn-outline-secondary" href="{{ url_for('logout') }}">Logout</a>
                         </li>
                       {% else %}
@@ -60,7 +63,7 @@
     {% endblock %}
   </main>
 
-  <div class="container-fluid">
+  <div class="container-fluid mt-auto">
     <footer>
       <div class="container">
         <p>main footer of the site</p>
