@@ -34,6 +34,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
     -   #### Imagery & Icons
         The website uses emojis throughout. This makes the website look and feel consistent. It also demonstrates to the user how emojis can be used interchangeably with words, which is a key element of gameplay. The jumbotron features an image of two people looking and smiling at their phones. This highlights the fun, peer to peer aspect of the game. 
+
         
    
 
@@ -53,7 +54,6 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 
-
 ## Technologies Used
 
 ### Languages Used
@@ -66,6 +66,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ### Frameworks, Libraries & Programs Used
  - [Google Fonts:](https://fonts.google.com/)
     - Used for all fonts throughout the website by import to the style.css file. 
+
  - [Font Awesome:](https://fontawesome.com/)
     - Is used for the social media icons in the footer on all pages. 
  - [Git](https://git-scm.com/)
@@ -78,7 +79,6 @@ This app Emoji Playground is a fun and creative app where users can try to solve
      - Was used for the database program. 
  - [Flask:](https://flask.palletsprojects.com/en/2.1.x/)
      - Was used as a framework for the backend integration.
-
 
 
 ## Testing
@@ -123,8 +123,6 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 |Bug | Solution | Status |
 |----|:---------|:-------|
 || |  |
-
-
 
 
 
@@ -177,7 +175,6 @@ In the Deploy tab:
 3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should now see the `View` button, click this to open your application.
 
 
-
 ## Credits
 
 ### Code
@@ -189,6 +186,7 @@ In the Deploy tab:
 
 ### Media
 - The hero image comes from Afif Kusuma via Unsplash.
+
 
 ### Acknowledgements
 - 
