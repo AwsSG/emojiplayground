@@ -16,7 +16,7 @@
 </div>
 <div class="container">
 
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-4 three-across-padding">
             <div class="three-across-box black-border text-center">
                 <span class="emoji-large">⚙️</span>
@@ -59,7 +59,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10 col-md-8">
-                <h3>Put your emoji skills to the test. Solve and make your own emoji riddles.</h3>
+                <h3>Put your emoji skills to the test.</h3>
+                <h4>Solve and make your own emoji riddles.</h4>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -77,7 +78,7 @@
 </div>
 
 <div class="container text-center">
-    <div class="row">
+    <div class="row justify-content-center">
     {% for riddle in riddles %}
         <div class="col-12 col-md-6 col-lg-4 three-across-padding">
             <div class="three-across-box">
@@ -87,15 +88,16 @@
             </div>
         </div>
     {% endfor %}
-    <a href="{{ url_for('playground') }}">See all our riddles</a>
     </div>
+    <a href="{{ url_for('playground') }}">See all our riddles</a>
 </div>
 
 <div class="container text-center landing-page-section">
     <div class="row justify-content-center">
         <div class="col-10 col-md-8">
             <div>
-                <h4>Ready for the challenge? Sign up now and see how well you can emoji.</h4>
+                <h3>Ready for the challenge?</h3>
+                <h4>Sign up now and see how well you can emoji.</h4>
             </div>
             <div>
                 {% if session.user%}

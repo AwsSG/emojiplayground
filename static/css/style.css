@@ -24,7 +24,12 @@
     font-size: 100px;
 }
 
+/*Has a media query to make large on larger screens*/
 .emoji-medium {
+    font-size: 32px;
+}
+
+.emoji-small {
     font-size: 32px;
 }
 
