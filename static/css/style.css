@@ -196,6 +196,29 @@ footer {
     padding: 10px;
 }
 
+/*----------Playground------------*/
+
+.playground-riddle {
+    text-align: center;
+}
+
+.riddle-container {
+    min-width: 200px;
+    height: auto;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  /* img {
+    width: 100%;
+  } */
+  
+  .outer-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
 /*----------Media Queries-------------*/
 
 @media(min-width: 768px) {
