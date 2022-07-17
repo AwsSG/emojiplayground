@@ -4,17 +4,21 @@
 <div class="container">
     <div class="mt-3 mb-3 mt-md-5 mb-md-5 black-border p-2 pt-lg-4 pb-lg-4">
         <div class="row p-4 justify-content-center">
-            <h3>Emoji Playground</h3>
+            <div class="col-12">
+                <h3 class="text-center">Emoji Playground</h3>
+            </div>
         </div>
         <div class="row justify-content-center">
-            <p class="text-center">Have a go at solving these riddles, or <a href="{{ url_for('create') }}">build your own</a>!</p>
+            <div class="col-12">
+                <p class="text-center">Have a go at solving these riddles, or <a href="{{ url_for('create') }}">build your own</a>!</p>
+            </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 outer-container">
                     {% for riddle in riddles %}
                         <div class="riddle-container">
-                            <p class="playground-riddle">{{ riddle.emojis }}</p>
+                            <p class="playground-riddle emoji-small">{{ riddle.emojis }}</p>
                             <p class="playground-riddle">By {{ riddle.user }}</p>
                             <p class="playground-riddle"> xxxxx rated this x</p>
                             <div class="row justify-content-center">
