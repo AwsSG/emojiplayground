@@ -1,8 +1,5 @@
 /*colors for testing*/
 
-.orange {
-    background-color: orange
-}
 
 .red {
     background-color: red
@@ -12,17 +9,142 @@
     background-color: blue
 }
 
-/*----------landing page-------------*/
 
-/*jumbatron*/
+/*----------fonts emoji sizes and colours -------------*/
+
+/*orange colour - option to change this to something custom*/
+.orange {
+    background-color: orange
+}
+
+/*emoji sizing*/
+
+
+.emoji-large {
+    font-size: 100px;
+}
+
+/*Has a media query to make large on larger screens*/
+.emoji-medium {
+    font-size: 32px;
+}
+
+.emoji-small {
+    font-size: 32px;
+}
+
+a {
+    color: #E4620C;
+    font-weight: 500;
+}
+
+a:hover {
+    color: black;
+}
+
+/*----------grid padding and margins-------------*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
 .container-fluid {
     padding: 0;
 }
 
-/*padding*/
+/*----------base template-------------*/
+
+/*Nav bar*/
+
+nav {
+    background-color: orange;
+}
+
+.navbar-brand {
+    font-size: x-large;
+}
+
+.landing-page-button {
+    padding: 10px;
+    margin: 10px;
+    min-width: 120px;
+    border-radius: 2px;
+    box-shadow: 5px 5px;   
+}
+
+.btn-outline-secondary {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+
+.orange-hover:hover {
+    color: #fff;
+    background-color: orange;
+    border-color: orange;
+}
+
+/*Footer*/
+
+footer {
+    background-color: lightgrey;
+    min-height: 150px;
+    /*width: 100%;
+    position: fixed;
+    bottom: 0;*/
+}
+
+/*----------landing page-------------*/
+
+/*jumbatron*/
+
+.jumbotron {
+    height: 40vh;
+    background: url('../images/game-landing-page.jpg') no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    position: relative;
+}
+
+.jumbotron > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.jumbotron > .jumbotron-content {
+    position: relative;
+    z-index: 2;
+}
+
+.jumbotron-content div {
+    margin: 0;
+}
+
+/*three across*/
 
 .three-across-box {
+    padding: 20px;
+}
+
+.three-across-padding {
     padding: 20px;
 }
 
@@ -30,14 +152,95 @@
     border: 1px black solid;
 }
 
-.three-across-padding {
+/*landing page full width section*/
+
+.landing-page-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
     padding: 20px;
 }
 
-.emoji-large {
-    font-size: 100px;
+/*----------Create Page-------------*/
+
+.emoji-select-box {
+    display:inline-block;
 }
 
-.emoji-medium {
-    font-size: 32px;
+.emoji-select-box {
+    max-width: 50px;
+    max-height: 50px;
+    padding: 1px;
 }
+
+.emoji-select-box input {
+    max-width: 100%;
+    font-size: x-large;
+}
+
+.emoji-select-box-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.create-title {
+    font-size: x-large;
+}
+
+.create-sub-title {
+    font-size: large;
+}
+
+.phrase-input label {
+    font-size: large;
+}
+
+.phrase-input input {
+    min-width: 250px;
+    margin-top: 20px;
+    margin-bottom:20px;
+    padding: 10px;
+}
+
+/*----------Play Page-------------*/
+
+.star-container {
+    text-align: center;
+}
+.star-rating {
+    color: #999;
+}
+
+/*----------Media Queries-------------*/
+
+@media(min-width: 768px) {
+    .emoji-select-box {
+        max-width: 60px;
+        max-height: 60px;
+        padding: 2px;
+    }
+    .emoji-select-box input {
+      font-size: xx-large;
+    }
+
+    .phrase-input input {
+        min-width: 400px
+    }
+
+    .create-title {
+        font-size: xx-large;
+    }
+    
+    .create-sub-title {
+        font-size: x-large;
+    }
+    
+    .phrase-input label {
+        font-size: x-large;
+    }
+
+    .emoji-medium {
+        font-size: 64px;
+    }
+
+  }
+  

@@ -69,6 +69,8 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 ### Frameworks, Libraries & Programs Used
+ - [Google Fonts:](https://fonts.google.com/)
+    - Used for all fonts throughout the website by import to the style.css file.
  - [Font Awesome:](https://fontawesome.com/)
     - Is used for the social media icons in the footer on all pages. 
  - [Git](https://git-scm.com/)
@@ -81,6 +83,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
      - Was used for the database program. 
  - [Flask:](https://flask.palletsprojects.com/en/2.1.x/)
      - Was used as a framework for the backend integration.
+
 
 
 
@@ -133,6 +136,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 ## Deployment
 
+
 ### Forking the GitHub Repository
 1. Go to [the project repository](https://github.com/ErikHgm/Tesla-Order-App)
 2. In the right most top menu, click the "Fork" button.
@@ -178,7 +182,6 @@ In the Deploy tab:
     - Choose the correct repository for your application and click on `Connect`.
 2. You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the `Deploy Branch` button whenever you want a change made.
 3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should now see the `View` button, click this to open your application.
-
 
 
 ## Credits
