@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Playground</h3>
+
+{% for riddle in riddles %}
+    <p>{{ riddle.emojis }}</p>
+    <p>By {{ riddle.user }}</p>
+    <p> xxxxx rated this x</p>
+{% endfor %}
+
+{% endblock %}

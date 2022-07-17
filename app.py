@@ -66,6 +66,17 @@ def create():
     return render_template("create.html")
 
 
+@app.route("/playground")
+def playground():
+    """ View to show all the riddles on database for users to guess"""
+    # check if user is logged in
+    if session.get('user'):
+        riddles = list(mongo.db.riddles.find())
+        return render_template("playground.html", riddles=riddles)
+    flash("You have to login first")
+    return redirect(url_for("login"))
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """ Register route to register users """
@@ -120,7 +131,7 @@ def login():
         if existing_user:
             # ensure hashed password matches what the user provided
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+               existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for("main", username=session["user"]))
