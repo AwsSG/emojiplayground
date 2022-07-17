@@ -36,7 +36,13 @@
                   </div>
                 </div>
             </div>
-            <div class="container pb-4">
+            <div class="row justify-content-center">
+                  <p class="rating-spacer">🏆 Rating:</p>
+                  <div id="current-rating">{{ rating }}</div>
+                  <p class="rating-spacer">🏅</p>
+                  <div id="rated-message"></div>
+            </div>
+            <div class="container p-4">
                 <div class="row justify-content-center">
                     <a href="#">Next riddle ></a>
                 </div>
@@ -45,9 +51,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="current-rating">{{ rating }}</div>
-    <div id="rated-message"></div>
+      </div>
 </div>
 
 <!-- Button trigger modal -->
@@ -79,8 +83,8 @@
       </div>
       </div>
       <div class="modal-footer">
-        <!--<button id="rating-modal-closer" type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>-->
-        <button type="submit" class="landing-page-button btn btn-outline-secondary orange-hover">Submit</button>
+        <button id="rating-modal-closer" type="button" class="modal-button btn btn-outline-secondary btn-outline-faded" data-dismiss="modal">Close</button>
+        <button type="submit" class="modal-button btn btn-outline-secondary orange-hover">Submit</button>
       </div>
     </form>
     </div>
