@@ -19,6 +19,7 @@
 
 /*emoji sizing*/
 
+
 .emoji-large {
     font-size: 100px;
 }
@@ -221,6 +222,10 @@ footer {
     
     .phrase-input label {
         font-size: x-large;
+    }
+
+    .emoji-medium {
+        font-size: 64px;
     }
 
   }
