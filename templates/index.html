@@ -6,15 +6,15 @@
         <div class="overlay"></div>
             <div class="jumbotron-content">
                 <div class="p-md-4">
-                    <h2 class="text-center">The collaborative Emoji riddle guessing game</h2>
+                    <h2 class="text-center">The collaborative emoji riddle game</h2>
                 </div>
                 {% if session.user %}
                 <div class="d-flex justify-content-center">
-                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('playground') }}" role="button">Go to playground</a>
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('playground') }}" role="button">Play Now 🕹️</a>
                 </div>
                 {% else %}
                 <div class="d-flex justify-content-center">
-                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up</a>
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up 📝</a>
                 </div>
                 {% endif %}
             </div>
@@ -42,7 +42,7 @@
                     Solve
                 </h4>
                 <p>
-                    Have a go at solving pictogram riddles set by other players
+                    Have a go at solving emoji riddles set by other players
                 </p>
             </div>
         </div>
@@ -53,7 +53,7 @@
                     Rate
                 </h4>
                 <p>
-                    Rate your favourites and see how they rank our leaderboard 
+                    Rate your favourite riddles and see how your own creations rank 
                 </p>
             </div>
         </div>
@@ -65,18 +65,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10 col-md-8">
-                <h3>Put your emoji skills to the test.</h3>
-                <h4>Solve and make your own emoji riddles.</h4>
+                <h3>Put your emoji skills to the test</h3>
+                <h4>Have a go at making your own emoji riddles</h4>
             </div>
         </div>
         <div class="row justify-content-center">
             {% if session.user%}
             <div class="col-12">
-                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('create') }}" role="button">Create</a>
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('create') }}" role="button">Create ✏️</a>
             </div>
             {% else %}
             <div class="col-12">
-                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('register') }}" role="button">Start</a>
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('register') }}" role="button">Get Started 👏</a>
             </div>
             {% endif %}
         </div>
@@ -99,24 +99,23 @@
         </div>
     {% endfor %}
     </div>
-    <a href="{{ url_for('playground') }}">See all our riddles</a>
 </div>
 
 <div class="container text-center landing-page-section">
     <div class="row justify-content-center">
         <div class="col-10 col-md-8">
             <div>
-                <h3>Ready for the challenge?</h3>
-                <h4>Sign up now and see how well you can emoji.</h4>
+                <h3>Ready for the challenge? 😉</h3>
+                <h4>See how many emoji riddles you can solve!</h4>
             </div>
             <div>
                 {% if session.user%}
                 <div class="col-12">
-                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('play', id=solve._id) }}" role="button">Start</a>
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('play', id=solve._id) }}" role="button">Play Now 🕹️</a>
                 </div>
                 {% else %}
                 <div class="col-12">
-                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Start</a>
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up 📝</a>
                 </div>
                 {% endif %}
             </div>
