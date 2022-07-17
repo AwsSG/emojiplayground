@@ -4,6 +4,7 @@ from flask import (Flask, render_template, url_for,
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import random
 if os.path.exists("env.py"):
     import env
 
@@ -22,7 +23,10 @@ mongo = PyMongo(app)
 @app.route("/")
 def main():
     """ the main view of the app """
-    return render_template("index.html")
+    riddles = list(mongo.db.riddles.find())
+    random_riddles = random.sample(riddles, 3)
+
+    return render_template("index.html", riddles=random_riddles)
 
 
 @app.route("/create", methods=["GET", "POST"])
@@ -76,6 +80,17 @@ def play(id):
         return { "answer": answer,}
         
     return render_template("play.html", riddle=riddle, answer=answer)
+
+
+@app.route("/playground")
+def playground():
+    """ View to show all the riddles on database for users to guess"""
+    # check if user is logged in
+    if session.get('user'):
+        riddles = list(mongo.db.riddles.find())
+        return render_template("playground.html", riddles=riddles)
+    flash("You have to login first")
+    return redirect(url_for("login"))
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -132,7 +147,7 @@ def login():
         if existing_user:
             # ensure hashed password matches what the user provided
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+               existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for("main", username=session["user"]))
