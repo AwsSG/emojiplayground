@@ -11,15 +11,20 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 -   ### User stories
 
     -   #### First Time Visitor Goals
-        As a first time visitor I expect 
+        As a first time visitor I expect to quickly find clear and concise information about what the website is all about and how to use it.
+
+        As a first time user I expect to be able to create my user account in order to both start creating and solving riddles.
       
     -   #### Returning Visitor Goals
-        As a returning user I expect 
+        As a returning user I expect to be able to create and submit more riddles to the service.
 
+        As a returning user I expect to be able to solve more riddles that others have submitted to the service.
         
-
     -   #### Frequent User Goals
-        As frequent user I expect 
+        As frequent user I expect that others have rated my riddles.
+
+        As frequent user I expect to create riddles that gets better ratings that hopefully makes it to the leaderboard.
+
 
         
 
@@ -43,27 +48,29 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 - ### Nav and Jumbotron
-    - In the top of the landing page there is a navigation bar and information section about what the website is all about, displayed clearly to the users upon entering the site. Just enough of the necessary details to get started is shown in order to prevent information overload.    
-     
-    ![Landing Page](static/images/landing_page.png)
+    - In the top of the landing page there is a navigation bar and information section about what the website is all about, displayed clearly to the users upon entering the site. Just enough of the necessary details to get started is shown in order to prevent information overload.  
+      
+      ![Landing Page](static/images/landing_page.png)
 
 - ### The Leaderboard
-    -    In the leaderboard section the highest ranked riddles are shown in order to inspire and motivate the user to create and submit their best riddles.  
-
-    ![Leaderboard](static/images/leaderboard.png)
+    -    In the leaderboard section the highest ranked riddles are shown in order to inspire and motivate the user to create and submit their best riddles.
+      
+          ![Leaderboard](static/images/leaderboard.png)
 
 - ### The Playground
     -   The Playground section allows for playfulness when letting users be creative and start combining their own riddles using the provided emoji picker.  
 
-    ![Playground](static/images/build.png)
+          ![Playground](static/images/build.png)
 
 - ### Solve Others Riddles
     -   This area is where the user will be challenged by riddles that has been submitted by other users. 
-    ![SolveRiddles](static/images/solve.png)
+          
+          ![SolveRiddles](static/images/solve.png)
 
 - ### Rate the Riddle
     -   After trying to solve the riddles, users are able to give each riddle a star rating from 1-5. The highest ranked riddles will be shown on the leaderboard.
-    ![RateRiddle](static/images/rate.png)
+          
+          ![RateRiddle](static/images/rate.png)
 
 
 ## Technologies Used
