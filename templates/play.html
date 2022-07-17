@@ -21,9 +21,10 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                  <div class="col-12">
                     <form id="guess-form">
                         <div class="row justify-content-center">
-                            <div id="guess-feedback">Enter your guess...</div>
+                            <div id="guess-feedback" class="text-center">Enter your guess...</div>
                         </div>
                         <div class="row justify-content-center phrase-input">
                             <input name="guess" id="guess-input" required></input>
@@ -32,20 +33,25 @@
                             <button class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Guess</button>
                         </div>
                     </form>
+                  </div>
                 </div>
             </div>
-            <div class="container pb-4">
+            <div class="row justify-content-center">
+                  <p class="rating-spacer">🏆 Rating:</p>
+                  <div id="current-rating">{{ rating }}</div>
+                  <p class="rating-spacer">🏅</p>
+                  <div id="rated-message"></div>
+            </div>
+            <div class="container p-4">
                 <div class="row justify-content-center">
-                    <a href="#">Next puzzle ></a>
+                    <a href="#">Next riddle ></a>
                 </div>
                 <div class="row justify-content-center pt-3">
                     <a href="{{ url_for('playground') }}">Back to playground</a>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="current-rating">{{ rating }}</div>
-    <div id="rated-message"></div>
+      </div>
 </div>
 
 <!-- Button trigger modal -->
@@ -58,7 +64,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="puzzle-rate-modal">Did you like this puzzle?</h5>
+        <h5 class="modal-title" id="puzzle-rate-modal">Did you like this riddle?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -67,7 +73,7 @@
     <form id="rating-form">
        <input name="rating" type="hidden" id="hidden-rating-input" value="1" />
        <p id="modal-right-or-wrong"></p>
-      <p>Give this puzzle a rating for other users...</p>
+      <p>Give this riddle a rating for other users...</p>
       <div class="star-container">
         <i style = "color: orange" class="star-rating star-1 fas fa-star fa-lg" data-star="1"></i>
         <i class="star-rating star-2 fas fa-star fa-lg" data-star="2"></i>
@@ -77,8 +83,8 @@
       </div>
       </div>
       <div class="modal-footer">
-        <button id="rating-modal-closer" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="rating-modal-closer" type="button" class="modal-button btn btn-outline-secondary btn-outline-faded" data-dismiss="modal">Close</button>
+        <button type="submit" class="modal-button btn btn-outline-secondary orange-hover">Submit</button>
       </div>
     </form>
     </div>
