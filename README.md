@@ -180,17 +180,8 @@ In the Deploy tab:
 
 ## Credits
 
-### Code
-- 
-
-### Content
-- 
-
-
 ### Media
 - The hero image comes from Afif Kusuma via Unsplash.
 
-### Acknowledgements
-- 
 
 
