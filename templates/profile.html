@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>{{ username }}'s Profile</h3>
+
+{% for riddle in riddles %}
+    <p>Emojis: {{ riddle.emojis }}</p>
+    <p>Phrase: {{ riddle.phrase }}</p>
+    <a href="{{ url_for('play', id=riddle._id) }}">Edit</a>
+    <a href="{{ url_for('play', id=riddle._id) }}">Delete</a>
+{% endfor %}
+
+{% endblock %}
