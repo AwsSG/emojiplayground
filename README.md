@@ -64,17 +64,25 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ### Languages Used
  - [HTML5](https://en.wikipedia.org/wiki/HTML5)
  - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+ - [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+ - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 
 ### Frameworks, Libraries & Programs Used
- - [Google Fonts:](https://fonts.google.com/)
-    - Used for all fonts throughout the website by import to the style.css file.
  - [Font Awesome:](https://fontawesome.com/)
     - Is used for the social media icons in the footer on all pages. 
  - [Git](https://git-scm.com/)
     - Git was used for version control through the Gitpod terminal to commit and push to GitHub
  - [GitHub:](https://github.com/)
      - Was used for all storing and backup of the code pertaining to the project. 
+ - [Bootstrap:](https://getbootstrap.com/)
+     - Was used as a framework for the fron end design and layout. 
+ - [MongoDB:](https://www.mongodb.com/)
+     - Was used for the database program. 
+ - [Flask:](https://flask.palletsprojects.com/en/2.1.x/)
+     - Was used as a framework for the backend integration.
+
+
 
 ## Testing
 -   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
