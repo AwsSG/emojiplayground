@@ -29,6 +29,14 @@
 
 /*----------grid padding and margins-------------*/
 
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 .container-fluid {
     padding: 0;
 }
@@ -76,6 +84,9 @@ nav {
 footer {
     background-color: lightgrey;
     min-height: 150px;
+    /*width: 100%;
+    position: fixed;
+    bottom: 0;*/
 }
 
 /*----------landing page-------------*/
