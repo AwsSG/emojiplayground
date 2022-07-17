@@ -83,20 +83,26 @@ def play(id):
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
     if (is_ajax):
         if request.method == 'POST':
+            user = session["user"]
             previous_rating_for_operation = None
             if previous_rating: 
                 previous_rating_for_operation = previous_rating
             else: 
-                previous_rating = 0
+                previous_rating_for_operation = 0
             rating = float(request.data.decode())
-            new_rating = (float(previous_rating) * number_of_ratings) + rating
+            new_rating = (float(previous_rating_for_operation) * number_of_ratings) + rating
             print(new_rating)
             new_rating = new_rating / (number_of_ratings + 1)
             print(previous_rating, "previous_rating")
             print(rating, "rating")
             print(new_rating, "new_rating")
             mongo.db.riddles.update_one(
-            {"_id": ObjectId(id)}, {"$set": {"rating": new_rating, "number_of_ratings": number_of_ratings + 1}})
+            {"_id": ObjectId(id)}, 
+            {"$set": {"rating": new_rating, 
+            "number_of_ratings": number_of_ratings + 1,
+            "last_rated_by": user,
+            "last_rating_received": rating,
+            }})
             return {"message": "Thanks for Rating!", "rating": new_rating}
         elif request.method == 'GET':
             return {"answer": answer}
@@ -105,7 +111,7 @@ def play(id):
         initial_rating_for_template = previous_rating
     else: 
         initial_rating_for_template = "No rating yet"
-    return render_template("play.html", riddle=riddle, answer=answer, rating=previous_rating)
+    return render_template("play.html", riddle=riddle, answer=answer, rating=initial_rating_for_template)
 
 
 @app.route("/playground")
