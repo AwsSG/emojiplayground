@@ -133,7 +133,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ### Known Bugs
 |Bug | Solution | Status |
 |----|:---------|:-------|
-|| |  |
+|The "Next Riddle" button in playground did not work properly|Updated the related function |Fixed  |
 
 
 
