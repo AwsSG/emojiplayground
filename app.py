@@ -1,12 +1,13 @@
 import os
 from flask import (Flask, render_template, url_for,
-                   request, flash, session, redirect)
+                   request, flash, session, redirect, jsonify)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import random
 if os.path.exists("env.py"):
     import env
+
 
 
 app = Flask(__name__)
@@ -64,6 +65,21 @@ def create():
         print(phrase)
         mongo.db.riddles.insert_one(riddle)
     return render_template("create.html")
+
+
+@app.route("/play/<id>")
+def play(id):
+    entry = mongo.db.riddles.find_one(
+        {"_id": ObjectId(id)})
+    print(entry)
+    riddle = entry["emojis"]
+    answer = entry["phrase"]
+    is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
+    print(is_ajax);
+    if (is_ajax):
+        return { "answer": answer,}
+        
+    return render_template("play.html", riddle=riddle, answer=answer)
 
 
 @app.route("/playground")

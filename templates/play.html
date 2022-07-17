@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+    <div>
+        <div>
+            {{ riddle }}
+        </div>
+        <div>
+            Guesses Remaning: <span id="guesses-remaining">3</span>
+        </div>
+        <div>
+            <form id="guess-form">
+                
+                <input name="guess" id="guess-input" required></input>
+                 <button type="submit">Guess</button>
+            </form>
+            <div id="guess-feedback">Enter your guess...</div>
+        </div>
+    </div>
+    <div>
+        <a href="#">Next puzzle ></a>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/guessingScript.js') }}"></script>
+
+{% endblock %}
