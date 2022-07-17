@@ -1,4 +1,6 @@
+from logging.handlers import RotatingFileHandler
 import os
+from pickle import OBJ
 from flask import (Flask, render_template, url_for,
                    request, flash, session, redirect, jsonify)
 from flask_pymongo import PyMongo
@@ -7,6 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import random
 if os.path.exists("env.py"):
     import env
+import json
 
 
 
@@ -105,19 +108,50 @@ def edit_riddle(e_id):
     return render_template("edit_riddle.html", riddle=riddle)
 
 
-@app.route("/play/<id>")
+@app.route("/play/<id>", methods=["GET", "POST"])
 def play(id):
     entry = mongo.db.riddles.find_one(
         {"_id": ObjectId(id)})
-    print(entry)
     riddle = entry["emojis"]
     answer = entry["phrase"]
+    previous_rating = None
+    number_of_ratings = 0
+    if "rating" in entry:
+        previous_rating=entry["rating"]
+    if "number_of_ratings" in entry:
+        number_of_ratings = entry["number_of_ratings"]
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
-    print(is_ajax)
     if (is_ajax):
-        return { "answer": answer,}
-
-    return render_template("play.html", riddle=riddle, answer=answer)
+        if request.method == 'POST':
+            user = session["user"]
+            previous_rating_for_operation = None
+            if previous_rating: 
+                previous_rating_for_operation = previous_rating
+            else: 
+                previous_rating_for_operation = 0
+            rating = float(request.data.decode())
+            new_rating = (float(previous_rating_for_operation) * number_of_ratings) + rating
+            print(new_rating)
+            new_rating = new_rating / (number_of_ratings + 1)
+            print(previous_rating, "previous_rating")
+            print(rating, "rating")
+            print(new_rating, "new_rating")
+            mongo.db.riddles.update_one(
+            {"_id": ObjectId(id)}, 
+            {"$set": {"rating": new_rating, 
+            "number_of_ratings": number_of_ratings + 1,
+            "last_rated_by": user,
+            "last_rating_received": rating,
+            }})
+            return {"message": "Thanks for Rating!", "rating": new_rating}
+        elif request.method == 'GET':
+            return {"answer": answer}
+    initial_rating_for_template = None
+    if previous_rating:
+        initial_rating_for_template = previous_rating
+    else: 
+        initial_rating_for_template = "No rating yet"
+    return render_template("play.html", riddle=riddle, answer=answer, rating=initial_rating_for_template)
 
 
 @app.route("/playground")
@@ -170,7 +204,6 @@ def database_test():
             "value": value
         }
         mongo.db.test_entries.insert_one(test_entry)
-        print(value)
     return render_template("database-test.html", all_entries=all_entries)
 
 

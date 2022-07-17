@@ -1,16 +1,17 @@
-/*colors for testing*/
-
-
-.red {
-    background-color: red
-}
-
-.blue {
-    background-color: blue
-}
-
+/*Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Nunito&display=swap');
 
 /*----------fonts emoji sizes and colours -------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Comfortaa', Verdana, sans-serif;
+    font-weight: 600;
+}
 
 /*orange colour - option to change this to something custom*/
 .orange {
@@ -45,6 +46,7 @@ a:hover {
 /*----------grid padding and margins-------------*/
 
 body {
+    font-family: 'Nunito', Verdana, sans-serif;;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -65,7 +67,9 @@ nav {
 }
 
 .navbar-brand {
-    font-size: x-large;
+    font-size: large;
+    font-family: 'Comfortaa', Verdana, sans-serif;
+    font-weight: 700;
 }
 
 .landing-page-button {
@@ -76,10 +80,24 @@ nav {
     box-shadow: 5px 5px;   
 }
 
+.modal-button {
+    padding: 10px;
+    margin: 10px;
+    min-width: 80px;
+    border-radius: 2px;
+    box-shadow: 5px 5px;   
+}
+
 .btn-outline-secondary {
     color: black;
     background-color: white;
     border-color: black;
+}
+
+.btn-outline-faded {
+    color: grey;
+    background-color: white;
+    border-color: grey;
 }
 
 .btn-outline-secondary:hover {
@@ -150,6 +168,8 @@ footer {
 
 .black-border {
     border: 1px black solid;
+    border-radius: 2px;
+    box-shadow: 5px 5px; 
 }
 
 /*landing page full width section*/
@@ -201,6 +221,24 @@ footer {
     padding: 10px;
 }
 
+/*----------Play Page-------------*/
+
+.star-container {
+    text-align: center;
+}
+.star-rating {
+    color: #999;
+}
+
+#guess-feedback {
+    max-width: 100%;
+}
+
+.rating-spacer {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
 /*----------Playground------------*/
 
 .playground-riddle {
@@ -213,10 +251,6 @@ footer {
     text-align: center;
     margin: 20px;
   }
-  
-  /* img {
-    width: 100%;
-  } */
   
   .outer-container {
     display: flex;
@@ -254,6 +288,10 @@ footer {
 
     .emoji-medium {
         font-size: 64px;
+    }
+
+    .navbar-brand {
+        font-size: xx-large;
     }
 
   }
