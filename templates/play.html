@@ -3,27 +3,46 @@
 
 
 <div class="container">
-    <div>
-        <div>
-            {{ riddle }}
+    <div class="mt-3 mb-3 mt-md-5 mb-md-5 p-2 p-lg-5 black-border">
+        <div class="container">
+            <div class="row p-4 justify-content-center">
+                <h2 class="create-title text-center">Solve Emoji Riddles</h2>
+            </div>
+
+            <div>
+                <div class="row justify-content-center">
+                    <div class="emoji-medium">
+                        {{ riddle }}
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-3">
+                    <div class="text-center phrase-input">
+                        Guesses Remaning: <span id="guesses-remaining">3</span>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <form id="guess-form">
+                        <div class="row justify-content-center">
+                            <div id="guess-feedback">Enter your guess...</div>
+                        </div>
+                        <div class="row justify-content-center phrase-input">
+                            <input name="guess" id="guess-input" required></input>
+                        </div>
+                        <div class="row justify-content-center pb-4">
+                            <button class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Guess</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container pb-4">
+                <div class="row justify-content-center">
+                    <a href="#">Next puzzle ></a>
+                </div>
+                <div class="row justify-content-center pt-3">
+                    <a href="{{ url_for('playground') }}">Back to playground</a>
+                </div>
+            </div>
         </div>
-        <div>
-            Guesses Remaning: <span id="guesses-remaining">3</span>
-        </div>
-        <div>
-            <form id="guess-form">
-                
-                <input name="guess" id="guess-input" required></input>
-                 <button type="submit">Guess</button>
-            </form>
-            <div id="guess-feedback">Enter your guess...</div>
-        </div>
-    </div>
-    <div>
-        <a href="#">Next puzzle ></a>
-    </div>
-    <div>
-        <a href="{{ url_for('playground') }}">Back to playground</a>
     </div>
 </div>
 
