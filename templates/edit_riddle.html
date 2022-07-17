@@ -6,7 +6,7 @@
     <div class="mt-3 mb-3 mt-md-5 mb-md-5 p-2 pt-lg-4 pb-lg-4 black-border">
         <div class="container">
             <div class="row p-4 justify-content-center">
-                <h3 class="text-center">Build Emoji Riddles</h3>
+                <h3 class="text-center">Edit Emoji Riddles</h3>
             </div>
             <div class="row justify-content-center">
                 <p class="text-center">Select emojis to create your riddle</p>
@@ -18,19 +18,19 @@
             <div class="row justify-content-center">
                 <div class="emoji-select-box-container">
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-1" data-number="1" readonly="readonly" class="emoji-input-1 emoji-selector-1" required/>
+                        <input name="emoji-1" data-number="1" readonly="readonly" class="emoji-input-1 emoji-selector-1" value="{{ riddle.emojis[0] }}" required/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-2" data-number="2" readonly="readonly" class="emoji-input-2 emoji-selector-2" />
+                        <input name="emoji-2" data-number="2" readonly="readonly" class="emoji-input-2 emoji-selector-2" value="{{ riddle.emojis[1] }}"/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-3" data-number="3" readonly="readonly"class="emoji-input-3 emoji-selector-3" />
+                        <input name="emoji-3" data-number="3" readonly="readonly"class="emoji-input-3 emoji-selector-3" value="{{ riddle.emojis[2] }}"/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-4" data-number="4" readonly="readonly" class="emoji-input-4 emoji-selector-4" />
+                        <input name="emoji-4" data-number="4" readonly="readonly" class="emoji-input-4 emoji-selector-4" value="{{ riddle.emojis[3] }}"/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-5" data-number="5" readonly="readonly" class="emoji-input-5 emoji-selector-5" />
+                        <input name="emoji-5" data-number="5" readonly="readonly" class="emoji-input-5 emoji-selector-5" value="{{ riddle.emojis[4] }}"/>
                     </div>
                 </div>
             </div>
@@ -44,11 +44,12 @@
             </div>
             <div class="row justify-content-center">
                 <div class="phrase-input">
-                    <input name="phrase" id="phrase-input" required/>        
+                    <input name="phrase" id="phrase-input" value="{{ riddle.phrase }}"required/>        
                 </div>
             </div>
             <div class="row justify-content-center pb-4">
                 <button class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Submit</button>
+                <a href="{{ url_for('profile', username=session['user']) }}">Cancel</a>
             </div>
             </form>
             <div class="row justify-content-center pb-4">
