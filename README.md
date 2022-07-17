@@ -24,14 +24,16 @@ This app Emoji Playground is a fun and creative app where users can try to solve
         
 
 -   ### Design
-    - Color Scheme  
-    
+    -   #### Color Scheme
+        A simple colour palette of black, white, and grey has been used with highlighting tones of orange. This adds a vibrant and playful look to the website. The footer and nav bar colours are different to the main website background, so to distinguish them from the main body of the page. A slightly darker tone of orange has been used on links for a better colour contrast rating.
 
+        ![Color Palette](static/images/colours.jpg)
 
-    - Typography  
+    -   #### Typography  
+        Headings are in Comfortaa and normal text is in Nunito. Comfortaa is a rounded and slightly cursive font. It is playful and adds personality to the website, while remaining easily readable. Nunito is a well-balanced, highly readable sans-serif font frequently used for websites and applications. Fallback fonts of Verdana and sans-serif have been used in case the fonts cannot be imported into the site correctly. The website name in the Nav Bar is in lower-case, to enhance the playful nature of the font. Normal capitalization has been used elsewhere on the site for enhanced readability.
 
-       
-    - Imagery  
+    -   #### Imagery & Icons
+        The website uses emojis throughout. This makes the website look and feel consistent. It also demonstrates to the user how emojis can be used interchangeably with words, which is a key element of gameplay. The jumbotron features an image of two people looking and smiling at their phones. This highlights the fun, peer to peer aspect of the game. 
         
    
 
@@ -69,6 +71,8 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 ### Frameworks, Libraries & Programs Used
+ - [Google Fonts:](https://fonts.google.com/)
+    - Used for all fonts throughout the website by import to the style.css file. 
  - [Font Awesome:](https://fontawesome.com/)
     - Is used for the social media icons in the footer on all pages. 
  - [Git](https://git-scm.com/)
@@ -76,7 +80,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
  - [GitHub:](https://github.com/)
      - Was used for all storing and backup of the code pertaining to the project. 
  - [Bootstrap:](https://getbootstrap.com/)
-     - Was used as a framework for the fron end design and layout. 
+     - Was used as a framework for the front end design and layout. 
  - [MongoDB:](https://www.mongodb.com/)
      - Was used for the database program. 
  - [Flask:](https://flask.palletsprojects.com/en/2.1.x/)
@@ -191,7 +195,7 @@ In the Deploy tab:
 
 
 ### Media
-- 
+- The hero image comes from Afif Kusuma via Unsplash.
 
 ### Acknowledgements
 - 
