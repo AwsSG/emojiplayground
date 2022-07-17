@@ -9,5 +9,7 @@
     <p> xxxxx rated this x</p>
     <a href="{{ url_for('play', id=riddle._id) }}">Solve this</a>
 {% endfor %}
+<br>
+<a href="{{ url_for('playground') }}">Create your own riddle</a>
 
 {% endblock %}
