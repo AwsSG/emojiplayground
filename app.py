@@ -28,8 +28,9 @@ def main():
     """ the main view of the app """
     riddles = list(mongo.db.riddles.find())
     random_riddles = random.sample(riddles, 3)
+    solve = random.choice(riddles)
 
-    return render_template("index.html", riddles=random_riddles)
+    return render_template("index.html", riddles=random_riddles, solve=solve)
 
 
 @app.route("/create", methods=["GET", "POST"])

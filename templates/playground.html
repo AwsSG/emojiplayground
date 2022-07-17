@@ -21,7 +21,11 @@
                             <div class="riddle-container">
                                 <p class="playground-riddle emoji-small">{{ riddle.emojis }}</p>
                                 <p class="playground-riddle">By {{ riddle.user }}</p>
-                                <p class="playground-riddle"> xxxxx rated this x</p>
+                                {% if riddle.rating %}
+                                <p class="playground-riddle">Rating: {{ riddle.rating|round(1, 'common') }}</p>
+                                {% else %}
+                                <p class="playground-riddle">No rating yet</p>
+                                {% endif %}
                                 <div class="row justify-content-center">
                                     <a href="{{ url_for('play', id=riddle._id) }}" class="landing-page-button btn btn-outline-secondary orange-hover" role="button">Solve this</a>
                                 </div>
