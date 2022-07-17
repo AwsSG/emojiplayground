@@ -19,6 +19,7 @@
 
 /*emoji sizing*/
 
+
 .emoji-large {
     font-size: 100px;
 }
@@ -27,7 +28,24 @@
     font-size: 32px;
 }
 
+a {
+    color: #E4620C;
+    font-weight: 500;
+}
+
+a:hover {
+    color: black;
+}
+
 /*----------grid padding and margins-------------*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
 .container-fluid {
     padding: 0;
@@ -76,6 +94,9 @@ nav {
 footer {
     background-color: lightgrey;
     min-height: 150px;
+    /*width: 100%;
+    position: fixed;
+    bottom: 0;*/
 }
 
 /*----------landing page-------------*/
@@ -201,6 +222,10 @@ footer {
     
     .phrase-input label {
         font-size: x-large;
+    }
+
+    .emoji-medium {
+        font-size: 64px;
     }
 
   }
