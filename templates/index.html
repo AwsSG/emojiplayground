@@ -8,9 +8,15 @@
                 <div class="p-md-4">
                     <h2 class="text-center">The collaborative Emoji riddle guessing game</h2>
                 </div>
+                {% if session.user %}
+                <div class="d-flex justify-content-center">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('playground') }}" role="button">Go to playground</a>
+                </div>
+                {% else %}
                 <div class="d-flex justify-content-center">
                     <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up</a>
                 </div>
+                {% endif %}
             </div>
     </div>
 </div>
@@ -66,7 +72,7 @@
         <div class="row justify-content-center">
             {% if session.user%}
             <div class="col-12">
-                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('create') }}" role="button">Start</a>
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('create') }}" role="button">Create</a>
             </div>
             {% else %}
             <div class="col-12">
@@ -84,7 +90,11 @@
             <div class="three-across-box">
                 <span class="emoji-medium">{{ riddle.emojis }}</span>
                 <p>By {{ riddle.user }}</p>
-                <p> xxxxx rated this x</p>
+                {% if riddle.rating %}
+                <p>Rating: {{ riddle.rating|round(1, 'common') }}</p>
+                {% else %}
+                <p>No rating yet</p>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
@@ -102,7 +112,7 @@
             <div>
                 {% if session.user%}
                 <div class="col-12">
-                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('create') }}" role="button">Start</a>
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('play', id=solve._id) }}" role="button">Start</a>
                 </div>
                 {% else %}
                 <div class="col-12">
