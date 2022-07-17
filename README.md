@@ -40,21 +40,14 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ## Existing Features
 
 
-- ### Header and Navigation Bar
-    - 
+- ### Landing Page
 
-![Header and navigation](static/images/)
-
-- ### Landing page 
-
-![Hero image](static/images/)
-    
+    ![Landing Page](static/images/landing_page.png)
 
 
-- ### The Footer
-    - 
+- ### The Playground
+    ![Playground](static/images/playground.png)
 
-![The Footer](static/images/)
 
 
 
