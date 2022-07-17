@@ -64,8 +64,48 @@ def create():
             "phrase": phrase,
             "user": session["user"]
         }
+        flash("Emoji Riddle submitted successfully")
         mongo.db.riddles.insert_one(riddle)
     return render_template("create.html")
+
+
+@app.route("/edit_riddle/<e_id>", methods=["GET", "POST"])
+def edit_riddle(e_id):
+    """ view to allow users to edit riddles """
+    riddle = mongo.db.riddles.find_one({"_id": ObjectId(e_id)})
+    if request.method == "POST":
+        emoji_one = request.form.get("emoji-1") + " "
+        emoji_two = request.form.get("emoji-2")
+        if emoji_two == None:
+            emoji_two = ""
+        else:
+            emoji_two = emoji_two + " "
+        emoji_three = request.form.get("emoji-3")
+        if emoji_three == None:
+            emoji_three = ""
+        else:
+            emoji_three = emoji_three + " "
+        emoji_four = request.form.get("emoji-4")
+        if emoji_four == None:
+            emoji_four = ""
+        else:
+            emoji_four = emoji_four + " "
+        emoji_five = request.form.get("emoji-5")
+        if emoji_five == None:
+            emoji_five = ""
+        else:
+            emoji_five = emoji_five + " "
+        emojis = emoji_one + emoji_two + emoji_three + emoji_four + emoji_five
+        phrase = request.form.get("phrase")
+        riddle = {
+            "emojis": emojis.strip(),
+            "phrase": phrase,
+            "user": session["user"]
+        }
+        mongo.db.riddles.replace_one({"_id": ObjectId(e_id)}, riddle)
+        flash("Emoji Riddle updated successfully")
+        return redirect(url_for("profile", username=session["user"]))
+    return render_template("edit_riddle.html", riddle=riddle)
 
 
 @app.route("/play/<id>", methods=["GET", "POST"])
@@ -216,6 +256,17 @@ def logout():
     flash("You have been logged out successfully!")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/delete_riddle/<r_id>")
+def delete_riddle(r_id):
+    """ Delete riddle """
+    username = mongo.db.test_entries.find_one(
+        {"username": session["user"]})
+    mongo.db.riddles.delete_one({"_id": ObjectId(r_id)})
+    flash("Emoji Riddle deleted successfully")
+    print(r_id)
+    return redirect(url_for("profile", username=username["username"]))
 
 
 if __name__ == "__main__":
