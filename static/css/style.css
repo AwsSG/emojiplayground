@@ -27,6 +27,15 @@
     font-size: 32px;
 }
 
+a {
+    color: #E4620C;
+    font-weight: 500;
+}
+
+a:hover {
+    color: black;
+}
+
 /*----------grid padding and margins-------------*/
 
 body {

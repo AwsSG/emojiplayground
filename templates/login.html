@@ -1,22 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Log In</h3>
+<div class="container">
+    <div class="game-box mt-4 mb-4 mt-md-5 mb-md-5 p-2 p-lg-5 black-border">
+        <div class="container">
+            <div class="row p-4 justify-content-center">
+                <h3 class="create-title text-center">Log In</h3>
+            </div>
 
-<form method="POST" action="{{ url_for('login') }}">
-    <!-- Username -->
-    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-        class="validate" required>
-    <label for="username">Username</label>
+            <form method="POST" action="{{ url_for('login') }}">
+                <!-- Username -->
+                <div class="row justify-content-center text-center phrase-input">
+                    <label for="username">Username:</label>
+                </div>
+                <div class="row justify-content-center phrase-input">
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                    class="validate" required>
+                </div>
 
-    <!-- password -->
-    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-        class="validate" required>
-    <label for="password">Password</label>
+                <!-- password -->
+                <div class="row justify-content-center text-center phrase-input">
+                    <label for="password">Password:</label>
+                </div>
+                <div class="row justify-content-center phrase-input">
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                    class="validate" required>
+                </div>
 
-    <!-- Log in -->
-    <button type="submit">Log In</button>
-
-</form>
+                <!-- Log in -->
+                <div class="row justify-content-center pb-4">
+                    <button class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Submit</button>
+                </div>
+            </form>
+            <div class="row justify-content-center p-2">
+                <p>Not yet registered? Sign up <a href="{{ url_for('register') }}">here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+        
 
 {% endblock %}
