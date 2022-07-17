@@ -1,6 +1,13 @@
 let guessForm = document.getElementById('guess-form');
 let feedbackContainer = document.getElementById('guess-feedback');
 let guessesRemainingContainer = document.getElementById('guesses-remaining');
+let modalFeedback = document.getElementById('modal-right-or-wrong');
+let modalLauncher = document.getElementById('rating-modal-launcher');
+
+let modalClicker = () => {
+    $(modalLauncher).click();
+}
+
 let waiting = false;
 guessForm.addEventListener('submit', (e)=>{
     e.preventDefault();
@@ -13,6 +20,7 @@ guessForm.addEventListener('submit', (e)=>{
             contentType: "application/json",
             data: {guess: "okey-dokey"},
             success: function(response) {
+                console.log(response);
                 waiting=true;
                 let answer = response.answer.toLowerCase().split(" ");
 
@@ -63,7 +71,8 @@ guessForm.addEventListener('submit', (e)=>{
                 let correctPercentage = correctWords / totalWords;
                 console.log(correctPercentage);
                 if (correctPercentage >= .9 && answerMatchThreshold > 0) {
-                    console.log('correct');
+                    modalClicker();
+                    modalFeedback.innerText = "Yay! You got it right!"
                     feedbackContainer.innerText = `That's Right the answer was "${response.answer}"! Well Done`;
                 }
                 if (correctPercentage >= .7 && correctPercentage < .9) {
@@ -87,6 +96,8 @@ guessForm.addEventListener('submit', (e)=>{
                     guessesRemainingContainer.innerText= guessesRemaining;
                 }
                 if (guessesRemaining <= 0) {
+                    modalClicker();
+                    modalFeedback.innerText = `Sorry you got it wrong. The correct answer was "${response.answer}"`
                     feedbackContainer.innerText = "No guesses Remaining. Try another puzzle"
                 }
                 else{

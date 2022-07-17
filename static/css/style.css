@@ -201,28 +201,14 @@ footer {
     padding: 10px;
 }
 
-/*----------Playground------------*/
+/*----------Play Page-------------*/
 
-.playground-riddle {
+.star-container {
     text-align: center;
 }
-
-.riddle-container {
-    min-width: 200px;
-    height: auto;
-    text-align: center;
-    margin: 20px;
-  }
-  
-  /* img {
-    width: 100%;
-  } */
-  
-  .outer-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
+.star-rating {
+    color: #999;
+}
 
 /*----------Media Queries-------------*/
 
