@@ -127,7 +127,11 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 ### Further Testing
--   
+-   Different browsers including Google Chrome, Internet Explorer, Safar and Microsoft Edge has been used on order to test and confirm the compatibility of the website.
+-   In order to make sure all the links and navigation works properly, proper testing was done to confirm functionality.
+-   Correct scaling on different devices was tested using the tool below:
+    -   [Responsivetesttool](http://responsivetesttool.com/)
+
 
 
 ### Known Bugs
