@@ -30,7 +30,9 @@ This app Emoji Playground is a fun and creative app where users can try to solve
         ![Color Palette](static/images/colours.jpg)
 
     -   #### Typography  
-        Headings are in Comfortaa and normal text is in Nunito. Comfortaa is a rounded and slightly cursive font. It is playful and adds personality to the website, while remaining easily readable. Nunito is a well-balanced, highly readable sans-serif font frequently used for websites and applications. Fallback fonts of Verdana and sans-serif have been used in case the fonts cannot be imported into the site correctly. The website name in the Nav Bar is in lower-case, to enhance the playful nature of the font. Normal capitalization has been used elsewhere on the site for enhanced readability.
+        Headings are in Comfortaa and normal text is in Nunito. Comfortaa is a rounded and slightly cursive font. It is playful and adds personality to the website, while remaining easily readable. Nunito is a well-balanced, highly readable sans-serif font frequently used for websites and applications.    
+        
+        Fallback fonts of Verdana and sans-serif have been used in case the fonts cannot be imported into the site correctly. The website name in the Nav Bar is in lower-case, to enhance the playful nature of the font. Normal capitalization has been used elsewhere on the site for enhanced readability.
 
     -   #### Imagery & Icons
         The website uses emojis throughout. This makes the website look and feel consistent. It also demonstrates to the user how emojis can be used interchangeably with words, which is a key element of gameplay. The jumbotron features an image of two people looking and smiling at their phones. This highlights the fun, peer to peer aspect of the game. 
@@ -40,18 +42,28 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ## Existing Features
 
 
-- ### Landing Page
-
+- ### Nav and Jumbotron
+    - In the top of the landing page there is a navigation bar and information section about what the website is all about, displayed clearly to the users upon entering the site. Just enough of the necessary details to get started is shown in order to prevent information overload.    
+     
     ![Landing Page](static/images/landing_page.png)
 
+- ### The Leaderboard
+    -    In the leaderboard section the highest ranked riddles are shown in order to inspire and motivate the user to create and submit their best riddles.  
+
+    ![Leaderboard](static/images/leaderboard.png)
 
 - ### The Playground
-    ![Playground](static/images/playground.png)
+    -   The Playground section allows for playfulness when letting users be creative and start combining their own riddles using the provided emoji picker.  
 
+    ![Playground](static/images/build.png)
 
+- ### Solve Others Riddles
+    -   This area is where the user will be challenged by riddles that has been submitted by other users. 
+    ![SolveRiddles](static/images/solve.png)
 
-
-
+- ### Rate the Riddle
+    -   After trying to solve the riddles, users are able to give each riddle a star rating from 1-5. The highest ranked riddles will be shown on the leaderboard.
+    ![RateRiddle](static/images/rate.png)
 
 
 ## Technologies Used
@@ -82,11 +94,10 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 ## Testing
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
-    - 
+-   [W3C Markup Validator](https://validator.w3.org/nu/) 
 
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
-    - 
+    
 
 
 
