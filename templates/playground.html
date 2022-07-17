@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Playground</h3>
+
+{% for riddle in riddles %}
+    <p>{{ riddle.emojis }}</p>
+    <p>By {{ riddle.user }}</p>
+    <p> xxxxx rated this x</p>
+    <a href="{{ url_for('play', id=riddle._id) }}">Solve this</a>
+{% endfor %}
+
+{% endblock %}

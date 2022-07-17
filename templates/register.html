@@ -1,22 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Register</h3>
+<div class="container">
+    <div class="mt-4 mb-4 mt-md-5 mb-md-5 p-2 p-lg-5 black-border">
+        <div class="container">
+            <div class="row p-4 justify-content-center">
+                <h3 class="create-title text-center">Sign Up</h3>
+            </div>
 
+            <form method="POST" action="{{ url_for('register') }}">
+                <!-- Username -->
+                <div class="row justify-content-center text-center phrase-input">
+                    <label for="username">Username:</label>
+                </div>
+                <div class="row justify-content-center phrase-input">
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                    class="validate" required>
+                </div>
 
-<form method="POST" action="{{ url_for('register') }}">
-    <!-- Username -->
-    <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-        class="validate" required>
-    <label for="username">Username</label>
+                <!-- password -->
+                <div class="row justify-content-center text-center phrase-input">
+                    <label for="password">Password:</label>
+                </div>
+                <div class="row justify-content-center phrase-input">
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                    class="validate" required>
+                </div>
 
-    <!-- password -->
-    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
-        class="validate" required>
-    <label for="password">Password</label>
-
-    <!-- register -->
-    <button type="submit">Register</button>
-</form>
+                <!-- register -->
+                <div class="row justify-content-center pb-4">
+                    <button  class="landing-page-button btn btn-outline-secondary orange-hover" type="submit">Register</button>
+                </div>
+            </form>
+            <div class="row justify-content-center p-2">
+                <p>Already registered? Log in <a href="{{ url_for('login') }}">here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
