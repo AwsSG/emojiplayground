@@ -15,7 +15,7 @@
                     <p>Emojis: {{ riddle.emojis }}</p>
                     <p>Phrase: {{ riddle.phrase }}</p>
                     <a href="{{ url_for('play', id=riddle._id) }}">Edit</a>
-                    <button type="button" data-toggle="modal" data-target="#deleteModal{{ riddle._id }}">Delete</button>
+                    <a href="#" data-toggle="modal" data-target="#deleteModal{{ riddle._id }}">Delete</a>
 
                     <!-- Modal -->
                     <div class="modal fade" id="deleteModal{{ riddle._id }}" role="dialog">
@@ -41,6 +41,7 @@
                     </div>
                     {% endfor %}
                 </div>
+                <a href="{{ url_for('create') }}">Create Emoji Riddle</a>
             </div>
         </div>
     </div>

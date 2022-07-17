@@ -192,7 +192,7 @@ def delete_riddle(r_id):
     """ Delete riddle """
     username = mongo.db.test_entries.find_one(
         {"username": session["user"]})
-    mongo.db.riddles.deleteOne({"_id": ObjectId(r_id)})
+    mongo.db.riddles.delete_one({"_id": ObjectId(r_id)})
     flash("Riddle deleted successfully")
     print(r_id)
     return redirect(url_for("profile", username=username["username"]))
