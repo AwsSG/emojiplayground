@@ -1,10 +1,10 @@
 <h1 align="center">Emoji Playground</h1>
 
-![Screen Mockup](static/images/)
+![Screen Mockup](static/images/screen_mockups.png)
 
-Introduction... 
+This app Emoji Playground is a fun and creative app where users can try to solve pictogram riddles that other users have submitted, as well as start creating their own riddles so others can have a go at solving  them. In addition users can also rate the ones they find the best ones and the website will display a leaderboard of the most popular ones chosen by the users. In order to participate the users have to setup an account and login to the app.
 
-[View the live website here.]()
+[View the live website here.](https://emojiplayground.herokuapp.com/)
 
 ## User Experience (UX)
 
