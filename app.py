@@ -75,10 +75,10 @@ def play(id):
     riddle = entry["emojis"]
     answer = entry["phrase"]
     is_ajax = request.headers.get('X-Requested-With') == 'XMLHttpRequest'
-    print(is_ajax);
+    print(is_ajax)
     if (is_ajax):
         return { "answer": answer,}
-        
+
     return render_template("play.html", riddle=riddle, answer=answer)
 
 
@@ -162,6 +162,20 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    """ view current logged in user profile to edit or delete riddles"""
+    # grab the session's user username from db
+    username = mongo.db.test_entries.find_one(
+        {"username": session["user"]})
+    # get riddles by the logged in user
+    riddles = list(mongo.db.riddles.find({"user": username["username"]}))
+    if session["user"]:
+        return render_template("profile.html", username=username["username"], riddles=riddles)
+
+    return redirect(url_for("login"))
 
 
 @app.route("/logout")
