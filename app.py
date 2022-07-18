@@ -106,7 +106,8 @@ def edit_riddle(e_id):
         mongo.db.riddles.replace_one({"_id": ObjectId(e_id)}, riddle)
         flash("Emoji Riddle updated successfully")
         return redirect(url_for("profile", username=session["user"]))
-    return render_template("edit_riddle.html", riddle=riddle)
+    emojis = riddle["emojis"].split()
+    return render_template("edit_riddle.html", emojis=emojis, riddle=riddle)
 
 
 @app.route("/play/<id>", methods=["GET", "POST"])
