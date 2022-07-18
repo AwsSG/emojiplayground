@@ -119,7 +119,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
     -   Users can see Riddles they've created in their profile. They also have the option to edit and delete their riddles.
     - The application has full CRUD functionality, meaning the user can delete (click) or edit (click) their riddles.
           
-          ![Profile](static/images/profile-snip.jpg)
+        ![Profile](static/images/profile-snip.jpg)
 
 
 ## Future Features
