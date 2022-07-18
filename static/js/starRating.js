@@ -15,7 +15,8 @@ ratingForm.addEventListener('submit', (e) => {
             contentType: "application/json",
             data: rating,
             success: function(response) {
-                document.getElementById("current-rating").innerText = response.rating;
+                let newRating = Math.round(response.rating * 100) / 100 
+                document.getElementById("current-rating").innerText = newRating;
                 document.getElementById("rated-message").innerText = response.message
                 closeModal();
             }
