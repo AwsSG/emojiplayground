@@ -231,12 +231,17 @@ def login():
 def profile(username):
     """ view current logged in user profile to edit or delete riddles"""
     # grab the session's user username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
+    user = mongo.db.users.find_one(
+        {"username": username})
     # get riddles by the logged in user
-    riddles = list(mongo.db.riddles.find({"user": username["username"]}))
+    riddles = None
+    try:
+        riddles = list(mongo.db.riddles.find({"user": username}))
+    except:
+        riddles = "none"
+    print(riddles, "riddles")
     if session["user"]:
-        return render_template("profile.html", username=username["username"], riddles=riddles)
+        return render_template("profile.html", username=username, riddles=riddles)
 
     return redirect(url_for("login"))
 
@@ -250,15 +255,14 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/delete_riddle/<r_id>")
-def delete_riddle(r_id):
+@app.route("/delete_riddle/<username>/<r_id>")
+def delete_riddle(username, r_id):
     """ Delete riddle """
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
+    username=username
     mongo.db.riddles.delete_one({"_id": ObjectId(r_id)})
     flash("Emoji Riddle deleted successfully")
     print(r_id)
-    return redirect(url_for("profile", username=username["username"]))
+    return redirect(url_for("profile", username=username))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
