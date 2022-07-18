@@ -110,6 +110,13 @@ def edit_riddle(e_id):
 
 @app.route("/play/<id>", methods=["GET", "POST"])
 def play(id):
+    next_riddle=None
+    try:
+        next_riddle = mongo.db.riddles.find({"_id": {"$gt": ObjectId(id) }}).limit(1)
+        next_riddle = next_riddle.next()
+    except:
+        next_riddle = mongo.db.riddles.find_one()
+    print('next', next_riddle)
     entry = mongo.db.riddles.find_one(
         {"_id": ObjectId(id)})
     riddle = entry["emojis"]
@@ -151,7 +158,7 @@ def play(id):
         initial_rating_for_template = previous_rating
     else: 
         initial_rating_for_template = "No rating yet"
-    return render_template("play.html", riddle=riddle, answer=answer, rating=initial_rating_for_template)
+    return render_template("play.html", next_riddle=next_riddle, riddle=riddle, answer=answer, rating=initial_rating_for_template)
 
 
 @app.route("/playground")
@@ -170,7 +177,7 @@ def register():
     """ Register route to register users """
     if request.method == "POST":
         # check if the username already exist
-        existing_user = mongo.db.test_entries.find_one(
+        existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
@@ -190,29 +197,12 @@ def register():
 
     return render_template("register.html")
 
-
-@app.route("/database_test",  methods=["GET", "POST"])
-def database_test():
-    """ simple view used to send test values to mongodb """
-
-    all_entries = list(mongo.db.test_entries.find())
-
-    if request.method == "POST":
-        # get the value from the form to print
-        value = request.form.get("test")
-        test_entry = {
-            "value": value
-        }
-        mongo.db.test_entries.insert_one(test_entry)
-    return render_template("database-test.html", all_entries=all_entries)
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """ Login users view """
     if request.method == "POST":
         # check if the user exists
-        existing_user = mongo.db.test_entries.find_one(
+        existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
@@ -239,7 +229,7 @@ def login():
 def profile(username):
     """ view current logged in user profile to edit or delete riddles"""
     # grab the session's user username from db
-    username = mongo.db.test_entries.find_one(
+    username = mongo.db.users.find_one(
         {"username": session["user"]})
     # get riddles by the logged in user
     riddles = list(mongo.db.riddles.find({"user": username["username"]}))
@@ -261,13 +251,12 @@ def logout():
 @app.route("/delete_riddle/<r_id>")
 def delete_riddle(r_id):
     """ Delete riddle """
-    username = mongo.db.test_entries.find_one(
+    username = mongo.db.users.find_one(
         {"username": session["user"]})
     mongo.db.riddles.delete_one({"_id": ObjectId(r_id)})
     flash("Emoji Riddle deleted successfully")
     print(r_id)
     return redirect(url_for("profile", username=username["username"]))
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

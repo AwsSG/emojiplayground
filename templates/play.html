@@ -44,7 +44,7 @@
             </div>
             <div class="container p-4">
                 <div class="row justify-content-center">
-                    <a href="#">Next riddle ></a>
+                    <a href="{{ url_for('play', id=next_riddle._id) }}">Next riddle ></a>
                 </div>
                 <div class="row justify-content-center pt-3">
                     <a href="{{ url_for('playground') }}">Back to playground</a>
