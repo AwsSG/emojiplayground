@@ -37,7 +37,7 @@ def main():
         logged_in = "false"
     print(logged_in)
     riddle = mongo.db.riddles.find_one()
-    return render_template("index.html", riddles=random_riddles, logged_in=logged_in, riddle=riddle)
+    return render_template("index.html", riddles=random_riddles, logged_in=logged_in, riddle=riddle, solve=solve)
 
 
 @app.route("/create", methods=["GET", "POST"])
