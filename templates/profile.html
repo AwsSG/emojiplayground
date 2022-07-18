@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="mt-3 mb-3 mt-md-5 mb-md-5 black-border p-2 pt-lg-4 pb-lg-4">
+        <div class="container">
+            <div class="row p-4 justify-content-center">
+                <div class="col-12">
+                    <h3 class="text-center">{{ username }}'s Profile</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <p class="text-center">View and manage your riddles, or <a href="{{ url_for('create') }}">create new ones</a>!</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="row">
+                    <div class="col-12 outer-container">
+                        {% for riddle in riddles %}
+                        <div class="riddle-container">
+                            <p class="playground-riddle">Emojis: {{ riddle.emojis }}</p>
+                            <p class="playground-riddle">Phrase: {{ riddle.phrase }}</p>
+                            <div class="row justify-content-center">
+                                <a class="rating-spacer" href="{{ url_for('edit_riddle', e_id=riddle._id) }}">Edit</a>
+                                <a class="rating-spacer" href="#" data-toggle="modal" data-target="#deleteModal{{ riddle._id }}">Delete</a>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteModal{{ riddle._id }}" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Delete Emoji Riddle</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Are you sure you want to delete this emoji riddle?</p>
+                                        <p>Emojis: {{ riddle.emojis }}</p>
+                                        <p>Phrase: {{ riddle.phrase }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a type="button" data-dismiss="modal">Cancel</a>
+                                        <a href="{{ url_for('delete_riddle', r_id=riddle._id) }}">Delete</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a type="button" class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('playground') }}">Go to Playground</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

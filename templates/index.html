@@ -3,103 +3,125 @@
 
 <div class="container-fluid">
     <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </div>
+        <div class="overlay"></div>
+            <div class="jumbotron-content">
+                <div class="p-md-4">
+                    <h2 class="text-center">The collaborative emoji riddle game</h2>
+                </div>
+                {% if session.user %}
+                <div class="d-flex justify-content-center">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('playground') }}" role="button">Play Now 🕹️</a>
+                </div>
+                {% else %}
+                <div class="d-flex justify-content-center">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up 📝</a>
+                </div>
+                {% endif %}
+            </div>
+    </div>
 </div>
 <div class="container">
 
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-4 three-across-padding">
-            <div class="three-across-box black-border">
+            <div class="three-across-box black-border text-center">
                 <span class="emoji-large">⚙️</span>
-                <h3>
-                    Build/ Create/ Make/ Write/ Emojify
-                </h3>
+                <h4>
+                    <!--Also / Create/ Make/ Write/ Emojify-->
+                    Build
+                </h4>
                 <p>
-                    Create an emoji pictogram riddle for other to try and guess
+                    Create emoji pictogram riddles for others to try and solve
                 </p>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 three-across-padding">
-            <div class="three-across-box black-border">
+            <div class="three-across-box black-border text-center">
                 <span class="emoji-large">🤔</span>
-                <h3>
-                    Guess
-                </h3>
+                <h4>
+                    Solve
+                </h4>
                 <p>
-                    Have a go at guessing pictogram riddles set by your friends
+                    Have a go at solving emoji riddles set by other players
                 </p>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 three-across-padding">
-            <div class="three-across-box black-border">
+            <div class="three-across-box black-border text-center">
                 <span class="emoji-large">🏆</span>
-                <h3>
+                <h4>
                     Rate
-                </h3>
+                </h4>
                 <p>
-                    Rate your favourites and try to gain a place on our leaderboard 
+                    Rate your favourite riddles and see how your own creations rank 
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row orange justify-content-center">
-        <div col="12">
-            <div class="row">
-                <h2>Ready for the challenge? Sign up now and see how well you can emoji.</h2>
+<div class="container-fluid orange text-center landing-page-section p-md-5">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-8">
+                <h3>Put your emoji skills to the test</h3>
+                <h4>Have a go at making your own emoji riddles</h4>
             </div>
-            <div class="row">
-                <button type="button" class="btn btn-primary">Sign Up Now</button>
+        </div>
+        <div class="row justify-content-center">
+            {% if session.user%}
+            <div class="col-12">
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('create') }}" role="button">Create ✏️</a>
+            </div>
+            {% else %}
+            <div class="col-12">
+                <a class="landing-page-button btn btn-outline-secondary" href="{{ url_for('register') }}" role="button">Get Started 👏</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <div class="row justify-content-center">
+    {% for riddle in riddles %}
+        <div class="col-12 col-md-6 col-lg-4 three-across-padding">
+            <div class="three-across-box">
+                <span class="emoji-medium">{{ riddle.emojis }}</span>
+                <p>By {{ riddle.user }}</p>
+                {% if riddle.rating %}
+                <p>Rating: {{ riddle.rating|round(1, 'common') }}</p>
+                {% else %}
+                <p>No rating yet</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+<div class="container text-center landing-page-section">
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-8">
+            <div>
+                <h3>Ready for the challenge? 😉</h3>
+                <h4>See how many emoji riddles you can solve!</h4>
+            </div>
+            <div>
+                {% if session.user%}
+                <div class="col-12">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('play', id=solve._id) }}" role="button">Play Now 🕹️</a>
+                </div>
+                {% else %}
+                <div class="col-12">
+                    <a class="landing-page-button btn btn-outline-secondary orange-hover" href="{{ url_for('register') }}" role="button">Sign Up 📝</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-
-    <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 three-across-padding">
-            <div class="three-across-box">
-                <span class="emoji-medium">😊😊😊😊😊</span>
-                <p>By Profile_Name</p>
-                <p> xxxxx rated this x</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 three-across-padding">
-            <div class="three-across-box">
-                <span class="emoji-medium">😊😊😊😊😊</span>
-                <p>By Profile_Name</p>
-                <p> xxxxx rated this x</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4 three-across-padding">
-            <div class="three-across-box">
-                <span class="emoji-medium">😊😊😊😊😊</span>
-                <p>By Profile_Name</p>
-                <p> xxxxx rated this x</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div col="12">
-            <div class="row">
-                <h4>Call To Action</h4>
-            </div>
-            <div class="row">
-                <button type="button" class="btn btn-primary">Primary</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
 
 {% endblock %}

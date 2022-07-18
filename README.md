@@ -11,6 +11,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 -   ### User stories
 
     -   #### First Time Visitor Goals
+  
         As a first time visitor I expect to quickly find clear and concise information about what the website is all about and how to use it.
 
         As a first time user I expect to be able to create my user account in order to both start creating and solving riddles.
@@ -24,7 +25,6 @@ This app Emoji Playground is a fun and creative app where users can try to solve
         As frequent user I expect that others have rated my riddles.
 
         As frequent user I expect to create riddles that gets better ratings that hopefully makes it to the leaderboard.
-
 
         
 
@@ -108,7 +108,6 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 
 
-
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
@@ -140,12 +139,11 @@ This app Emoji Playground is a fun and creative app where users can try to solve
     -   [Responsivetesttool](http://responsivetesttool.com/)
 
 
-
 ### Known Bugs
 |Bug | Solution | Status |
 |----|:---------|:-------|
-|The "Next Riddle" button in playground did not work properly|Updated the related function |Fixed  |
 
+|The "Next Riddle" button in playground did not work properly|Updated the related function |Fixed  |
 
 
 
@@ -204,6 +202,5 @@ In the Deploy tab:
 
 ### Media
 - The hero image comes from Afif Kusuma via Unsplash.
-
 
 
