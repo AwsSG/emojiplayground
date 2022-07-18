@@ -18,19 +18,19 @@
             <div class="row justify-content-center">
                 <div class="emoji-select-box-container">
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-1" data-number="1" readonly="readonly" class="emoji-input-1 emoji-selector-1" value="{{ riddle.emojis[0] }}" required/>
+                        <input name="emoji-1" data-number="1" readonly="readonly" class="emoji-input-1 emoji-selector-1" value="{{ emojis[0] }}" required/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-2" data-number="2" readonly="readonly" class="emoji-input-2 emoji-selector-2" value="{{ riddle.emojis[1] }}"/>
+                        <input name="emoji-2" data-number="2" readonly="readonly" class="emoji-input-2 emoji-selector-2" value="{{ emojis[1] }}"/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-3" data-number="3" readonly="readonly"class="emoji-input-3 emoji-selector-3" value="{{ riddle.emojis[2] }}"/>
+                        <input name="emoji-3" data-number="3" readonly="readonly"class="emoji-input-3 emoji-selector-3" value="{{ emojis[2] }}"/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-4" data-number="4" readonly="readonly" class="emoji-input-4 emoji-selector-4" value="{{ riddle.emojis[3] }}"/>
+                        <input name="emoji-4" data-number="4" readonly="readonly" class="emoji-input-4 emoji-selector-4" value="{{ emojis[3] }}"/>
                     </div>
                     <div class="emoji-select-box col-1">
-                        <input name="emoji-5" data-number="5" readonly="readonly" class="emoji-input-5 emoji-selector-5" value="{{ riddle.emojis[4] }}"/>
+                        <input name="emoji-5" data-number="5" readonly="readonly" class="emoji-input-5 emoji-selector-5" value="{{ emojis[4] }}"/>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <p class="text-center">E.g. Be right back</p>
+                <p class="text-center">Your previous phrase: {{ riddle.phrase }}</p>
             </div>
             <div class="row justify-content-center">
                 <div class="phrase-input">
