@@ -157,6 +157,7 @@ def play(id):
     initial_rating_for_template = None
     if previous_rating:
         initial_rating_for_template = previous_rating
+        initial_rating_for_template = round(initial_rating_for_template, 2)
     else: 
         initial_rating_for_template = "No rating yet"
     return render_template("play.html", next_riddle=next_riddle, riddle=riddle, answer=answer, rating=initial_rating_for_template)
