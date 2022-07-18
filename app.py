@@ -28,8 +28,16 @@ def main():
     """ the main view of the app """
     riddles = list(mongo.db.riddles.find())
     random_riddles = random.sample(riddles, 3)
-
-    return render_template("index.html", riddles=random_riddles)
+    logged_in = None
+    try:
+        user = session["user"]
+        print("user", user)
+        logged_in = "true"
+    except:
+        logged_in = "false"
+    print(logged_in)
+    riddle = mongo.db.riddles.find_one()
+    return render_template("index.html", riddles=random_riddles, logged_in=logged_in, riddle=riddle)
 
 
 @app.route("/create", methods=["GET", "POST"])
