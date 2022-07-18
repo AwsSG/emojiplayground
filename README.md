@@ -6,6 +6,40 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 [View the live website here.](https://emojiplayground.herokuapp.com/)
 
+## Table of Contents  
+
+### Contents
+- [User Experience (UX)](#user-experience-ux)
+  * [User Stories](#user-stories)
+    + [First Time Visitor Goals](#first-time-user-goals)
+    + [Returning Visitor Goals](#returning-visitor-goals)
+    + [Frequent User Goals](#frequent-user-goals)
+- [Design](#design)
+  + [Colour Scheme](#colour-scheme)
+  + [Typography](#typography)
+  + [Imagery & Icons](#imagery-icons)
+- [Wireframes](#wireframes)
+- [Exsisting Features](#features)
+  + [Nav and Jumbotron](#nav-and-jumbotron)
+  + [The Playground](#the-playground)
+  + [Build Your Own Riddle](#build-your-own-riddle)
+  + [Solve Other Riddles](#solve-other-riddles)
+  + [Rate the Riddle](#rate-the-riddle)
+  + [Profile](#profile)
+- [Future Features](#future-features)
+- [Technologies used](#technologies-used)
+  + [Languages Used](#languages-used)
+  + [Frameworks Libraries and Programs Used](#frameworks-libraries-and-programs-used)
+- [Testing](#testing)
+  + [Testing User Stories from User Experience (UX) Section](#testing-user-stories-from-user-experience-ux-section)
+- [Known Bugs](#known-bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  + [Collaborators](#collaborators)
+  + [Code](#code)
+  + [Media](#media)
+  + [Acknowledgements](#acknowledgements)
+
 ## User Experience (UX)
 
 -   ### User stories
@@ -67,6 +101,12 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 - ### Solve Others Riddles
     -   This area is where the user will be challenged by riddles that has been submitted by other users. 
+    - How it works:
+        - Each of the answer words are compared to the guess words and broken down into matched and unmatched.
+        - 90% of the total words (matched and unmatched for both guess and answer words) must be correct for the guess to be marked as correct
+        - This prevents the user from getting the answer right by just entering hundreds of words
+        - Different messages appear depending on what percentage of words the user got correct. Eg. If the user gets 75% of the words correct the application instructs them that they are almost correct (“just a little tweak”)
+        - For the answer to be correct the user must also get more than half the words in the answer correct.
           
           ![SolveRiddles](static/images/solve.png)
 
@@ -77,6 +117,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
 - ### Profile
     -   Users can see Riddles they've created in their profile. They also have the option to edit and delete their riddles.
+    - The application has full CRUD functionality, meaning the user can delete (click) or edit (click) their riddles.
           
           ![Profile](static/images/profile-snip.jpg)
 
@@ -117,13 +158,16 @@ This app Emoji Playground is a fun and creative app where users can try to solve
     - Git was used for version control through the Gitpod terminal to commit and push to GitHub
  - [GitHub:](https://github.com/)
      - Was used for all storing and backup of the code pertaining to the project. 
+ - [GitHub Projects](https://github.com/)
+     - Was used for managing tasks of the project
  - [Bootstrap:](https://getbootstrap.com/)
      - Was used as a framework for the front end design and layout. 
  - [MongoDB:](https://www.mongodb.com/)
      - Was used for the database program. 
  - [Flask:](https://flask.palletsprojects.com/en/2.1.x/)
      - Was used as a framework for the backend integration.
-
+- [Vanilla emoji picker](https://github.com/woody180/vanilla-javascript-emoji-picker)
+    - The emoji picker is an external library integrated into this project.
 
 
 ## Testing
