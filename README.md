@@ -11,15 +11,20 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 -   ### User stories
 
     -   #### First Time Visitor Goals
-        As a first time visitor I expect 
+  
+        As a first time visitor I expect to quickly find clear and concise information about what the website is all about and how to use it.
+
+        As a first time user I expect to be able to create my user account in order to both start creating and solving riddles.
       
     -   #### Returning Visitor Goals
-        As a returning user I expect 
+        As a returning user I expect to be able to create and submit more riddles to the service.
 
+        As a returning user I expect to be able to solve more riddles that others have submitted to the service.
         
-
     -   #### Frequent User Goals
-        As frequent user I expect 
+        As frequent user I expect that others have rated my riddles.
+
+        As frequent user I expect to create riddles that gets better ratings that hopefully makes it to the leaderboard.
 
         
 
@@ -30,28 +35,42 @@ This app Emoji Playground is a fun and creative app where users can try to solve
         ![Color Palette](static/images/colours.jpg)
 
     -   #### Typography  
-        Headings are in Comfortaa and normal text is in Nunito. Comfortaa is a rounded and slightly cursive font. It is playful and adds personality to the website, while remaining easily readable. Nunito is a well-balanced, highly readable sans-serif font frequently used for websites and applications. Fallback fonts of Verdana and sans-serif have been used in case the fonts cannot be imported into the site correctly. The website name in the Nav Bar is in lower-case, to enhance the playful nature of the font. Normal capitalization has been used elsewhere on the site for enhanced readability.
+        Headings are in Comfortaa and normal text is in Nunito. Comfortaa is a rounded and slightly cursive font. It is playful and adds personality to the website, while remaining easily readable. Nunito is a well-balanced, highly readable sans-serif font frequently used for websites and applications.    
+        
+        Fallback fonts of Verdana and sans-serif have been used in case the fonts cannot be imported into the site correctly. The website name in the Nav Bar is in lower-case, to enhance the playful nature of the font. Normal capitalization has been used elsewhere on the site for enhanced readability.
 
     -   #### Imagery & Icons
         The website uses emojis throughout. This makes the website look and feel consistent. It also demonstrates to the user how emojis can be used interchangeably with words, which is a key element of gameplay. The jumbotron features an image of two people looking and smiling at their phones. This highlights the fun, peer to peer aspect of the game. 
-
         
    
 
 ## Existing Features
 
 
-- ### Landing Page
+- ### Nav and Jumbotron
+    - In the top of the landing page there is a navigation bar and information section about what the website is all about, displayed clearly to the users upon entering the site. Just enough of the necessary details to get started is shown in order to prevent information overload.  
+      
+      ![Landing Page](static/images/landing_page.png)
 
-    ![Landing Page](static/images/landing_page.png)
+- ### The Leaderboard
+    -    In the leaderboard section the highest ranked riddles are shown in order to inspire and motivate the user to create and submit their best riddles.
+      
+          ![Leaderboard](static/images/leaderboard.png)
 
+- ### Build Your Own Riddle
+    -   The Build Your Own Riddle section allows for playfulness when letting users be creative and start combining their own riddles using the provided emoji picker.  
 
-- ### The Playground
-    ![Playground](static/images/playground.png)
+          ![BuildRiddle](static/images/build.png)
 
+- ### Solve Others Riddles
+    -   This area is where the user will be challenged by riddles that has been submitted by other users. 
+          
+          ![SolveRiddles](static/images/solve.png)
 
-
-
+- ### Rate the Riddle
+    -   After trying to solve the riddles, users are able to give each riddle a star rating from 1-5. The highest ranked riddles will be shown on the leaderboard.
+          
+          ![RateRiddle](static/images/rate.png)
 
 
 ## Technologies Used
@@ -66,7 +85,6 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 ### Frameworks, Libraries & Programs Used
  - [Google Fonts:](https://fonts.google.com/)
     - Used for all fonts throughout the website by import to the style.css file. 
-
  - [Font Awesome:](https://fontawesome.com/)
     - Is used for the social media icons in the footer on all pages. 
  - [Git](https://git-scm.com/)
@@ -81,48 +99,52 @@ This app Emoji Playground is a fun and creative app where users can try to solve
      - Was used as a framework for the backend integration.
 
 
+
 ## Testing
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
-    - 
+-   [W3C Markup Validator](https://validator.w3.org/nu/) 
 
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) 
-    - 
-
+    
 
 
 
 ### Testing User Stories from User Experience (UX) Section
 
 -   #### First Time Visitor Goals
-    -   As a first time visitor I expect 
+    As a first time visitor I expect to quickly find clear and concise information about what the website is all about and how to use it.  
+    -   Upon entering the website, users are immediately greeted and guided with the necessary information that quickly allows the user to get started and a call to action to sign up to the service in order to participate.  
 
-    -   As a first time visitor I expect 
-
-    -   As a first time visitor I want to 
-
-
-
-
+    As a first time user I expect to be able to create my user account in order to both start creating and solving riddles.
+    - The user accounts buttons are located at the top in the nav bar to be able to be easly found by the users.  
+      
 -   #### Returning Visitor Goals
-    - As a returning user I expect to be able to 
+    As a returning user I expect to be able to create and submit more riddles to the service.
+    -   As a returning visitor the user will be able to login again to their account and continue to add riddles to their profile.
 
-    - As a returning visitor interested in 
-
-    
-
+    As a returning user I expect to be able to solve more riddles that others have submitted to the service.
+    -   After learning how the website works and trying to solve riddles, the users will quickly learn how the riddles works and be able to improve their skills.
+        
 -   #### Frequent User Goals
-    - As frequent user I expect to
+    As frequent user I expect that others have rated my riddles.
+    -   As a frequent user you will have submitted many riddles and the likelihood of someone rating them will have increased.
 
+    As frequent user I expect to create riddles that gets better ratings and that hopefully makes it to the leaderboard.
+    -   After submitting several riddles and receiving ratings, the user will be able to improve on their riddle creating skills by learning which ones that gets the best ratings.
 
 
 ### Further Testing
--   
+-   Different browsers including Google Chrome, Internet Explorer, Safar and Microsoft Edge has been used on order to test and confirm the compatibility of the website.
+-   In order to make sure all the links and navigation works properly, proper testing was done to confirm functionality.
+-   Correct scaling on different devices was tested using the tool below:
+    -   [Responsivetesttool](http://responsivetesttool.com/)
 
 
 ### Known Bugs
 |Bug | Solution | Status |
 |----|:---------|:-------|
-|| |  |
+
+|The "Next Riddle" button in playground did not work properly|Updated the related function |Fixed  |
+
 
 
 
@@ -175,20 +197,10 @@ In the Deploy tab:
 3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should now see the `View` button, click this to open your application.
 
 
+
 ## Credits
-
-### Code
-- 
-
-### Content
-- 
-
 
 ### Media
 - The hero image comes from Afif Kusuma via Unsplash.
-
-
-### Acknowledgements
-- 
 
 
