@@ -2,7 +2,7 @@
 
 ![Screen Mockup](static/images/screen_mockups.png)
 
-This app Emoji Playground is a fun and creative app where users can try to solve pictogram riddles that other users have submitted, as well as start creating their own riddles so others can have a go at solving  them. In addition users can also rate the ones they find the best ones and the website will display a leaderboard of the most popular ones chosen by the users. In order to participate the users have to setup an account and login to the app.
+This app Emoji Playground is a fun and creative app where users can try to solve pictogram riddles that other users have submitted, as well as start creating their own riddles so others can have a go at solving  them. In addition users can also rate the ones they find the best ones and the website will display these ratings to other users. In order to participate the users have to setup an account and login to the app.
 
 [View the live website here.](https://emojiplayground.herokuapp.com/)
 
@@ -24,7 +24,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
     -   #### Frequent User Goals
         As frequent user I expect that others have rated my riddles.
 
-        As frequent user I expect to create riddles that gets better ratings that hopefully makes it to the leaderboard.
+        As frequent user I expect to create riddles that gets better ratings.
 
         
 
@@ -41,8 +41,11 @@ This app Emoji Playground is a fun and creative app where users can try to solve
 
     -   #### Imagery & Icons
         The website uses emojis throughout. This makes the website look and feel consistent. It also demonstrates to the user how emojis can be used interchangeably with words, which is a key element of gameplay. The jumbotron features an image of two people looking and smiling at their phones. This highlights the fun, peer to peer aspect of the game. 
-        
-   
+
+
+## Wireframes
+- [View the project wireframes here](static/wireframes/wireframes.pdf).
+
 
 ## Existing Features
 
@@ -52,10 +55,10 @@ This app Emoji Playground is a fun and creative app where users can try to solve
       
       ![Landing Page](static/images/landing_page.png)
 
-- ### The Leaderboard
-    -    In the leaderboard section the highest ranked riddles are shown in order to inspire and motivate the user to create and submit their best riddles.
+- ### The Playground
+    -    In the playground section the emoji riddles are shown with their ratings in order to inspire and motivate the user to create and submit their best riddles.
       
-          ![Leaderboard](static/images/leaderboard.png)
+          ![Playground](static/images/playground-snip.jpg)
 
 - ### Build Your Own Riddle
     -   The Build Your Own Riddle section allows for playfulness when letting users be creative and start combining their own riddles using the provided emoji picker.  
@@ -68,9 +71,32 @@ This app Emoji Playground is a fun and creative app where users can try to solve
           ![SolveRiddles](static/images/solve.png)
 
 - ### Rate the Riddle
-    -   After trying to solve the riddles, users are able to give each riddle a star rating from 1-5. The highest ranked riddles will be shown on the leaderboard.
+    -   After trying to solve the riddles, users are able to give each riddle a star rating from 1-5. The highest ranked riddles will be shown on the Playground.
           
           ![RateRiddle](static/images/rate.png)
+
+- ### Profile
+    -   Users can see Riddles they've created in their profile. They also have the option to edit and delete their riddles.
+          
+          ![Profile](static/images/profile-snip.jpg)
+
+
+## Future Features
+
+- ### Pagination on Playground page
+    - Pagination on the playground would be better suited to handling a large number of emoji riddles.
+
+- ### Make flash messages into a pop-up/ modal
+    - Further styling to the logged in/ logged out alerts would be more aesthetically pleasing and present a better user experience.
+
+- ### Marking solved puzzles as complete
+    - At present the player can replay riddles if they choose to. By adding something that marks a riddle as played, the user would know they have already completed it. It would be clearer to them what riddles are new or they have not completed yet
+
+- ### Further animations and music for correct answers
+    - Further sensory alerts to accompagny the congratulations message would further emphasis success to the player.
+
+- ### A Leaderboard
+    - A leaderboard would make it easy to see which emoji riddles people have played and rate the most. It could feature 'All Time' and 'Most Recent' categories.
 
 
 ## Technologies Used
@@ -128,7 +154,7 @@ This app Emoji Playground is a fun and creative app where users can try to solve
     As frequent user I expect that others have rated my riddles.
     -   As a frequent user you will have submitted many riddles and the likelihood of someone rating them will have increased.
 
-    As frequent user I expect to create riddles that gets better ratings and that hopefully makes it to the leaderboard.
+    As frequent user I expect to create riddles that gets better ratings. I can see their rankings on the playground.
     -   After submitting several riddles and receiving ratings, the user will be able to improve on their riddle creating skills by learning which ones that gets the best ratings.
 
 
@@ -197,10 +223,25 @@ In the Deploy tab:
 3. Once you have chosen your deployment method and have clicked `Deploy Branch` your application will be built and you should now see the `View` button, click this to open your application.
 
 
-
 ## Credits
+
+### Collaborators
+- This project was created by:
+
+    - Aws Sabah Gheni - [GitHub](https://github.com/AwsSG)
+    - Jack O'Sullivan - [GitHub](https://github.com/j-j-jack)
+    - Isabella Mitchell - [GitHub](https://github.com/Isabella-Mitchell)
+    - Erik Hagman - [GitHub](https://github.com/ErikHgm)
+    - With contribution from Emelie Markkanen Åberg in the planning session.
+
+### Code
+- Bootstrap classes were used in this project for festures including layout, navigation, buttons.
+- Code Institute's Gitpod full template was used for this project.
 
 ### Media
 - The hero image comes from Afif Kusuma via Unsplash.
+
+### Acknowledgements
+- Thank you to Code Institute for organising this Hackathon! 
 
 
